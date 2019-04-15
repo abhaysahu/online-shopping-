@@ -1160,7 +1160,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = ".text{ \r\n    position: relative;\r\n    border-radius: 10px;\r\n    margin-left:500px;\r\n    margin-top:-200px;\r\n    text-align: center;\r\n    margin-bottom: -500px;\r\n    font-size: 15px;\r\n    width: 200px;\r\n    height:50px;\r\n    font-family: cursive;\r\n    font-weight: 1000;\r\n    background-color: black;\r\n    color:white;\r\n    border: 2px red solid;\r\n}\r\n.text1{\r\n        position:absolute;\r\n        font-family: cursive;\r\n        font-weight: 500;\r\n        margin-left:450px;\r\n        margin-top: -350px;\r\n       font-size: 40px;\r\n     \r\n}\r\nimg{\r\n    border-radius: 50px;\r\n    margin-left: 350px;\r\n    opacity: 1;\r\n    margin-top:-20px;\r\n    border:5px red solid;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsc0JBQXNCO0lBQ3RCLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2IsWUFBWTtJQUNaLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsd0JBQXdCO0lBQ3hCLFlBQVk7SUFDWixzQkFBc0I7Q0FDekI7QUFDRDtRQUNRLGtCQUFrQjtRQUNsQixxQkFBcUI7UUFDckIsaUJBQWlCO1FBQ2pCLGtCQUFrQjtRQUNsQixtQkFBbUI7T0FDcEIsZ0JBQWdCOztDQUV0QjtBQUVEO0lBQ0ksb0JBQW9CO0lBQ3BCLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsaUJBQWlCO0lBQ2pCLHFCQUFxQjtDQUN4QiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dHsgXHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6NTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOi0yMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1ib3R0b206IC01MDBweDtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGN1cnNpdmU7XHJcbiAgICBmb250LXdlaWdodDogMTAwMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgY29sb3I6d2hpdGU7XHJcbiAgICBib3JkZXI6IDJweCByZWQgc29saWQ7XHJcbn1cclxuLnRleHQxe1xyXG4gICAgICAgIHBvc2l0aW9uOmFic29sdXRlO1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiBjdXJzaXZlO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6NDUwcHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogLTM1MHB4O1xyXG4gICAgICAgZm9udC1zaXplOiA0MHB4O1xyXG4gICAgIFxyXG59XHJcblxyXG5pbWd7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM1MHB4O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIG1hcmdpbi10b3A6LTIwcHg7XHJcbiAgICBib3JkZXI6NXB4IHJlZCBzb2xpZDtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1171,7 +1171,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<button\n  (click)=\"login()\"\n  class=\"btn btn-primary\">Login with Google</button>"
+module.exports = "<html>\n  <head>\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n          <title>login</title>\n          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  </head>\n  <body>\n      <div>\n          <img [src]=\"(featuredPhotoStream | async)?.url1\" alt=\"login page\" width=\"500px\" height=\"500px\">\n      <button (click)=\"login()\" class=\"text\"><i class=\"fa fa-google\" style=\"font-size:25px;color:red\"></i>Login with Google</button>\n      <p class=\"text1\">Welcome To Oshop!</p>\n       </div>\n  </body>\n</html>"
 
 /***/ }),
 
@@ -1188,12 +1188,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../auth.service */ "./src/app/auth.service.ts");
+/* harmony import */ var angularfire2_database__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angularfire2/database */ "./node_modules/angularfire2/database.js");
+
 
 
 
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(auth) {
+    function LoginComponent(db, auth) {
+        this.db = db;
         this.auth = auth;
+        this.featuredPhotoStream = this.db.object('/photos');
     }
     LoginComponent.prototype.login = function () {
         this.auth.login();
@@ -1204,7 +1208,7 @@ var LoginComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./login.component.html */ "./src/app/login/login.component.html"),
             styles: [__webpack_require__(/*! ./login.component.css */ "./src/app/login/login.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [angularfire2_database__WEBPACK_IMPORTED_MODULE_3__["AngularFireDatabase"], _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"]])
     ], LoginComponent);
     return LoginComponent;
 }());
