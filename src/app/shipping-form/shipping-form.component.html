@@ -15,12 +15,13 @@
         <div *ngIf="addressLine1.errors.required">Address Line 1 is required.</div>
       </div>
     </div>
+    <br>
     <div class="form-group">
-      <label for=""></label>
-      <input #addressLine2="ngModel" name="addressLine2" [(ngModel)]="shipping.addressLine2" type="text" class="form-control" placeholder="Address Line2"
+      <label for="">Phone number</label>
+      <input #addressLine2="ngModel" name="addressLine2" [(ngModel)]="shipping.addressLine2" type="text" class="form-control" placeholder="vaild phone number (9745632158)"
         required>
       <div class="alert alert-danger" *ngIf="addressLine2.touched && addressLine2.invalid">
-        <div *ngIf="addressLine2.errors.required">Address Line 2 is required.</div>
+        <div *ngIf="addressLine2.errors.required">Phone number is required.</div>
       </div>
     </div>
     <br>

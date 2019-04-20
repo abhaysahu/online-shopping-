@@ -2,7 +2,7 @@ import { Component, Input, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthService } from '../auth.service';
 import { OrderService } from '../order.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrderCart } from '../models/order-cart';
 import { Order } from '../models/order';
 import * as jsPDF from 'jspdf';
@@ -24,21 +24,21 @@ export class ViewOrderComponent implements OnInit {
   order$;
   SumOfQuantity=0;
   SumOfPrice=0;
+  orderId
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private db: AngularFireDatabase,
     private orderService: OrderService,) { 
 
-      const orderId = route.snapshot.paramMap.get('id');
-      this.order$ = orderService.get(orderId);
+      this.orderId = route.snapshot.paramMap.get('id');
+      this.order$ = orderService.get(this.orderId);
      
 
-      orderService.get(orderId).subscribe(orders => {
+      orderService.get(this.orderId).subscribe(orders => {
         this.orders = orders
 
-        this
-        
         
         for(let item of orders.items )
         {
@@ -72,6 +72,16 @@ export class ViewOrderComponent implements OnInit {
       pdf.save('MYPdf.pdf'); // Generated PDF   
     });  
   }
+    }
+
+
+    delete()
+    {
+      if(!confirm('Are you sure yow want to delete this product?')) return;
+      
+      this.orderService.delete(this.orderId);
+      this.router.navigate(['my/orders']);
+      
     }
 
 

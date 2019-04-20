@@ -6,9 +6,13 @@
   </head>
   <body>
       <div>
-          <img [src]="(featuredPhotoStream | async)?.url1" alt="login page" width="500px" height="500px">
-      <button (click)="login()" class="text"><i class="fa fa-google" style="font-size:25px;color:red"></i>Login with Google</button>
-      <p class="text1">Welcome To Oshop!</p>
+          <img [src]="(featuredPhotoStream | async)?.url1" alt="login page" width="500px" height="500px" >
+      
+          <button (click)="login()" class="text"><i class="fa fa-google" style="font-size:25px;color:red"></i>Login with Google</button>
+          
+      
+          <p class="text1">Welcome To Bumblebee!</p>
+          <a routerLink="/login/phone/number" class="btn btn-primary">Login with Phone Number</a>
        </div>
   </body>
 </html>

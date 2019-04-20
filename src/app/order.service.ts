@@ -24,7 +24,10 @@ export class OrderService {
     return this.db.object('/orders/' + orderId);
   }
 
-
+  delete(orderId)
+  {
+    return this.db.object('/orders/' + orderId).remove();
+  }
 
  
 

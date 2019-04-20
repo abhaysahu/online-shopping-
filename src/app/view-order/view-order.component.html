@@ -31,14 +31,14 @@
             <h2 style="text-align:center;">Order Summary </h2>
           
             <div class="header">
-              Health Stream or Health Center
+              Bumblebee
             </div>
            
             <div class="address" *ngIf="order$ | async as order">
               <div class="for">
                 <h3>Invoice For</h3>
                 <p>
-                  {{order.shipping.name}} <br /> {{order.shipping.addressLine1}} <br /> {{order.shipping.addressLine2}}, {{order.shipping.city}} 
+                  {{order.shipping.name}} <br /> {{order.shipping.addressLine1}} <br /> {{order.shipping.city}} <br /> {{order.shipping.addressLine2}}
                 </p>
               </div>
           
@@ -46,7 +46,7 @@
                 <h3>From</h3>
                 <p>
                     
-                  Rajesh Sharma<br /> Main Market Ln Block E<br /> Hauz Khas New Delhi, 110016
+                  Rajesh Sharma<br /> Main Market Ln Block E<br /> Hauz Khas New Delhi, 110016 <br /> +919725648215
                 </p>
               </div>
             </div>
@@ -82,16 +82,17 @@
                 <div class="signature">
                   Signature: ________________
                 </div>
+                <br>
+                <br>
             </div>
           </div>
           
-<br>
-<br>
+
           <div>
-              <button (click)="downloadPDF()">
-                Save Bill
-              </button>
-            </div>
+              <button class="btn btn-primary" (click)="downloadPDF()">Save Bill</button>
+              <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+              <br>
+          </div>
 </body>
 </html>
 

@@ -472,6 +472,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _view_order_view_order_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./view-order/view-order.component */ "./src/app/view-order/view-order.component.ts");
 /* harmony import */ var _developers_developers_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./developers/developers.component */ "./src/app/developers/developers.component.ts");
 /* harmony import */ var angular_particle__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! angular-particle */ "./node_modules/angular-particle/index.js");
+/* harmony import */ var _phone_phone_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./phone/phone.component */ "./src/app/phone/phone.component.ts");
+/* harmony import */ var _window_service__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./window.service */ "./src/app/window.service.ts");
+
+
 
 
 
@@ -540,6 +544,7 @@ var AppModule = /** @class */ (function () {
                 _shipping_form_shipping_form_component__WEBPACK_IMPORTED_MODULE_38__["ShippingFormComponent"],
                 _view_order_view_order_component__WEBPACK_IMPORTED_MODULE_39__["ViewOrderComponent"],
                 _developers_developers_component__WEBPACK_IMPORTED_MODULE_40__["DevelopersComponent"],
+                _phone_phone_component__WEBPACK_IMPORTED_MODULE_42__["PhoneComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -558,6 +563,7 @@ var AppModule = /** @class */ (function () {
                     { path: 'products', component: _products_products_component__WEBPACK_IMPORTED_MODULE_16__["ProductsComponent"] },
                     { path: 'shopping-cart', component: _shopping_cart_shopping_cart_component__WEBPACK_IMPORTED_MODULE_17__["ShoppingCartComponent"] },
                     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_23__["LoginComponent"] },
+                    { path: 'login/phone/number', component: _phone_phone_component__WEBPACK_IMPORTED_MODULE_42__["PhoneComponent"] },
                     { path: 'developer', component: _developers_developers_component__WEBPACK_IMPORTED_MODULE_40__["DevelopersComponent"] },
                     { path: 'check-out', component: _check_out_check_out_component__WEBPACK_IMPORTED_MODULE_18__["CheckOutComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_26__["AuthGuardService"]] },
                     { path: 'order-success/:id', component: _order_success_order_success_component__WEBPACK_IMPORTED_MODULE_19__["OrderSuccessComponent"], canActivate: [_auth_guard_service__WEBPACK_IMPORTED_MODULE_26__["AuthGuardService"],] },
@@ -595,7 +601,8 @@ var AppModule = /** @class */ (function () {
                 _category_service__WEBPACK_IMPORTED_MODULE_30__["CategoryService"],
                 _product_service__WEBPACK_IMPORTED_MODULE_31__["ProductService"],
                 _shopping_cart_service__WEBPACK_IMPORTED_MODULE_34__["ShoppingCartService"],
-                _order_service__WEBPACK_IMPORTED_MODULE_36__["OrderService"]
+                _order_service__WEBPACK_IMPORTED_MODULE_36__["OrderService"],
+                _window_service__WEBPACK_IMPORTED_MODULE_43__["WindowService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_13__["AppComponent"]]
         })
@@ -779,6 +786,7 @@ var BsNavbarComponent = /** @class */ (function () {
                 switch (_b.label) {
                     case 0:
                         this.auth.appUser$.subscribe(function (appUser) { return _this.appUser = appUser; });
+                        console.log(this.appUser);
                         _a = this;
                         return [4 /*yield*/, this.shoppingCartService.getCart()];
                     case 1:
@@ -936,7 +944,7 @@ module.exports = "p {\r\n    font-family: courier;\r\n    color: aliceblue;\r\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>Developers</title>\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n </head>\n    <body>\n            <div className=\"main\">\n        <particles  [params]=\"myParams\" [style]=\"myStyle\"></particles>\n           <div class=\"title\"> <h1 class=\"headingi\">Developers</h1> </div>\n        \n            <div class=\"cont1\">\n            \n        <div class=\"priyesh\">\n            <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url2\" alt=\"priyesh pic\" width=\"300px\" height=\"320px\" >\n            <div class=\"center\">Priyesh Rathore \n            <div class=\"text1\">MEAN Stack Developer </div>\n            </div>\n           <div class=\"overlay\">\n                   <div class=\"text\">\n                       <a href=\"https://www.facebook.com/priyesh.rathore.98\" target=\"_blank\" class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                       <a href=\"https://www.linkedin.com/in/priyesh-rathore-08679917b/\" target=\"_blank\" class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                      <a href=\"https://github.com/priyesh2206\" class=\"fa fa-github-square\" target=\"_blank\" style=\"font-size:50px\"></a>\n                   </div>\n            </div>\n        </div>\n        <div class=\"priyesh\">\n            <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url4\" alt=\"prashant pic\" width=\"300px\" height=\"320px\" >\n            <div class=\"center\">Prashant Singh\n              <div class=\"text1\">MEAN Stack Developer </div>\n            </div>\n            <div class=\"overlay\">\n                    <div class=\"text\">\n                            <a href=\"\" target=\"_blank\"  class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                            <a href=\"\" target=\"_blank\"  class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                            <a href=\"\" target=\"_blank\"  class=\"fa fa-github-square\" style=\"font-size:50px\"></a>\n                    </div>\n            </div>\n        </div>\n        <div class=\"priyesh\">\n                <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url3\" alt=\"abhay pic\" width=\"300px\" height=\"320px\" >\n                <div class=\"center\">Abhay Sahu\n                <div class=\"text1\">MEAN Stack Developer</div>\n                </div>\n                <div class=\"overlay\">\n                        <div class=\"text\">\n                                <a href=\"https://www.facebook.com/abhay.sahu.528\" target=\"_blank\" class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                                <a href=\"https://www.linkedin.com/in/abhay-sahu-4ab3ba183/\" target=\"_blank\" class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                                <a href=\"https://github.com/abhaysahu\" target=\"_blank\" class=\"fa fa-github-square\" style=\"font-size:50px\"></a>\n                        </div>\n                </div>\n            </div>\n            </div>\n            </div>\n                <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n            <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n            </body>\n    </html>"
+module.exports = "<html>\n<head>\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>Developers</title>\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n\n </head>\n    <body>\n            <div className=\"main\">\n        <particles  [params]=\"myParams\" [style]=\"myStyle\"></particles>\n           <div class=\"title\"> <h1 class=\"headingi\">Developers</h1> </div>\n        \n            <div class=\"cont1\">\n            \n        <div class=\"priyesh\">\n            <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url2\" alt=\"priyesh pic\" width=\"300px\" height=\"320px\" >\n            <div class=\"center\">Priyesh Rathore \n            <div class=\"text1\">MEAN Stack Developer </div>\n            </div>\n           <div class=\"overlay\">\n                   <div class=\"text\">\n                       <a href=\"https://www.facebook.com/priyesh.rathore.98\" target=\"_blank\" class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                       <a href=\"https://www.linkedin.com/in/priyesh-rathore-08679917b/\" target=\"_blank\" class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                      <a href=\"https://github.com/priyesh2206\" class=\"fa fa-github-square\" target=\"_blank\" style=\"font-size:50px\"></a>\n                   </div>\n            </div>\n        </div>\n        <div class=\"priyesh\">\n            <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url4\" alt=\"prashant pic\" width=\"300px\" height=\"320px\" >\n            <div class=\"center\">Prashant Singh\n              <div class=\"text1\">MEAN Stack Developer </div>\n            </div>\n            <div class=\"overlay\">\n                    <div class=\"text\">\n                            <a href=\"https://www.facebook.com/ps0798\" target=\"_blank\"  class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                            <a href=\"#\" target=\"_blank\"  class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                            <a href=\"https://github.com/ps0798\" target=\"_blank\"  class=\"fa fa-github-square\" style=\"font-size:50px\"></a>\n                    </div>\n            </div>\n        </div>\n        <div class=\"priyesh\">\n                <img class=\"img\" [src]=\"(featuredPhotoStream | async)?.url3\" alt=\"abhay pic\" width=\"300px\" height=\"320px\" >\n                <div class=\"center\">Abhay Sahu\n                <div class=\"text1\">MEAN Stack Developer</div>\n                </div>\n                <div class=\"overlay\">\n                        <div class=\"text\">\n                                <a href=\"https://www.facebook.com/abhay.sahu.528\" target=\"_blank\" class=\"fa fa-facebook-square\" style=\"font-size:50px\"></a>\n                                <a href=\"https://www.linkedin.com/in/abhay-sahu-4ab3ba183/\" target=\"_blank\" class=\"fa fa-linkedin-square\" style=\"font-size:50px\"></a>\n                                <a href=\"https://github.com/abhaysahu\" target=\"_blank\" class=\"fa fa-github-square\" style=\"font-size:50px\"></a>\n                        </div>\n                </div>\n            </div>\n            </div>\n            </div>\n                <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n            <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n            </body>\n    </html>"
 
 /***/ }),
 
@@ -1160,7 +1168,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".text{ \r\n    position: relative;\r\n    border-radius: 10px;\r\n    margin-left:500px;\r\n    margin-top:-200px;\r\n    text-align: center;\r\n    margin-bottom: -500px;\r\n    font-size: 15px;\r\n    width: 200px;\r\n    height:50px;\r\n    font-family: cursive;\r\n    font-weight: 1000;\r\n    background-color: black;\r\n    color:white;\r\n    border: 2px red solid;\r\n}\r\n.text1{\r\n        position:absolute;\r\n        font-family: cursive;\r\n        font-weight: 500;\r\n        margin-left:450px;\r\n        margin-top: -350px;\r\n       font-size: 40px;\r\n     \r\n}\r\nimg{\r\n    border-radius: 50px;\r\n    margin-left: 350px;\r\n    opacity: 1;\r\n    margin-top:-20px;\r\n    border:5px red solid;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsa0JBQWtCO0lBQ2xCLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsc0JBQXNCO0lBQ3RCLGdCQUFnQjtJQUNoQixhQUFhO0lBQ2IsWUFBWTtJQUNaLHFCQUFxQjtJQUNyQixrQkFBa0I7SUFDbEIsd0JBQXdCO0lBQ3hCLFlBQVk7SUFDWixzQkFBc0I7Q0FDekI7QUFDRDtRQUNRLGtCQUFrQjtRQUNsQixxQkFBcUI7UUFDckIsaUJBQWlCO1FBQ2pCLGtCQUFrQjtRQUNsQixtQkFBbUI7T0FDcEIsZ0JBQWdCOztDQUV0QjtBQUVEO0lBQ0ksb0JBQW9CO0lBQ3BCLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsaUJBQWlCO0lBQ2pCLHFCQUFxQjtDQUN4QiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dHsgXHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6NTAwcHg7XHJcbiAgICBtYXJnaW4tdG9wOi0yMDBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbi1ib3R0b206IC01MDBweDtcclxuICAgIGZvbnQtc2l6ZTogMTVweDtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIGhlaWdodDo1MHB4O1xyXG4gICAgZm9udC1mYW1pbHk6IGN1cnNpdmU7XHJcbiAgICBmb250LXdlaWdodDogMTAwMDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6IGJsYWNrO1xyXG4gICAgY29sb3I6d2hpdGU7XHJcbiAgICBib3JkZXI6IDJweCByZWQgc29saWQ7XHJcbn1cclxuLnRleHQxe1xyXG4gICAgICAgIHBvc2l0aW9uOmFic29sdXRlO1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiBjdXJzaXZlO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiA1MDA7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6NDUwcHg7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogLTM1MHB4O1xyXG4gICAgICAgZm9udC1zaXplOiA0MHB4O1xyXG4gICAgIFxyXG59XHJcblxyXG5pbWd7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1MHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDM1MHB4O1xyXG4gICAgb3BhY2l0eTogMTtcclxuICAgIG1hcmdpbi10b3A6LTIwcHg7XHJcbiAgICBib3JkZXI6NXB4IHJlZCBzb2xpZDtcclxufVxyXG4iXX0= */"
+module.exports = ".text{ \r\n    position: relative;\r\n    border-radius: 10px;\r\n    margin: 0 auto;\r\n    text-align: center;\r\n    margin-bottom: -500px;\r\n    font-size: 15px;\r\n    width: 200px;\r\n    height:50px; \r\n    font-family: cursive;\r\n    font-weight: 1000;\r\n    background-color: black;\r\n    color:white;\r\n    border: 2px red solid;\r\n    margin-left: -31%;\r\n}\r\n.text1{\r\n        position:absolute;\r\n        font-family: cursive;\r\n        font-weight: 500;\r\n        margin-left:380px;\r\n        margin-top: -350px;\r\n       font-size: 2.5em;\r\n       box-shadow: 2px 1px 4px 3px black;\r\n        background-color:rgb(160, 156, 184);\r\n        opacity: 0.7;\r\n        color: black;\r\n     \r\n}\r\nimg{\r\n    border-radius: 50px;\r\n    margin-left: 350px;\r\n    opacity: 1;\r\n    margin-top:-20px;\r\n    border:5px red solid;\r\n    z-index: -1;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLG1CQUFtQjtJQUNuQixvQkFBb0I7SUFDcEIsZUFBZTtJQUNmLG1CQUFtQjtJQUNuQixzQkFBc0I7SUFDdEIsZ0JBQWdCO0lBQ2hCLGFBQWE7SUFDYixZQUFZO0lBQ1oscUJBQXFCO0lBQ3JCLGtCQUFrQjtJQUNsQix3QkFBd0I7SUFDeEIsWUFBWTtJQUNaLHNCQUFzQjtJQUN0QixrQkFBa0I7Q0FDckI7QUFDRDtRQUNRLGtCQUFrQjtRQUNsQixxQkFBcUI7UUFDckIsaUJBQWlCO1FBQ2pCLGtCQUFrQjtRQUNsQixtQkFBbUI7T0FDcEIsaUJBQWlCO09BQ2pCLGtDQUFrQztRQUNqQyxvQ0FBb0M7UUFDcEMsYUFBYTtRQUNiLGFBQWE7O0NBRXBCO0FBRUQ7SUFDSSxvQkFBb0I7SUFDcEIsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxpQkFBaUI7SUFDakIscUJBQXFCO0lBQ3JCLFlBQVk7Q0FDZiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGV4dHsgXHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAtNTAwcHg7XHJcbiAgICBmb250LXNpemU6IDE1cHg7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBoZWlnaHQ6NTBweDsgXHJcbiAgICBmb250LWZhbWlseTogY3Vyc2l2ZTtcclxuICAgIGZvbnQtd2VpZ2h0OiAxMDAwO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogYmxhY2s7XHJcbiAgICBjb2xvcjp3aGl0ZTtcclxuICAgIGJvcmRlcjogMnB4IHJlZCBzb2xpZDtcclxuICAgIG1hcmdpbi1sZWZ0OiAtMzElO1xyXG59XHJcbi50ZXh0MXtcclxuICAgICAgICBwb3NpdGlvbjphYnNvbHV0ZTtcclxuICAgICAgICBmb250LWZhbWlseTogY3Vyc2l2ZTtcclxuICAgICAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OjM4MHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IC0zNTBweDtcclxuICAgICAgIGZvbnQtc2l6ZTogMi41ZW07XHJcbiAgICAgICBib3gtc2hhZG93OiAycHggMXB4IDRweCAzcHggYmxhY2s7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2IoMTYwLCAxNTYsIDE4NCk7XHJcbiAgICAgICAgb3BhY2l0eTogMC43O1xyXG4gICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICBcclxufVxyXG5cclxuaW1ne1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAzNTBweDtcclxuICAgIG9wYWNpdHk6IDE7XHJcbiAgICBtYXJnaW4tdG9wOi0yMHB4O1xyXG4gICAgYm9yZGVyOjVweCByZWQgc29saWQ7XHJcbiAgICB6LWluZGV4OiAtMTtcclxufVxyXG4iXX0= */"
 
 /***/ }),
 
@@ -1171,7 +1179,7 @@ module.exports = ".text{ \r\n    position: relative;\r\n    border-radius: 10px;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n  <head>\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n          <title>login</title>\n          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  </head>\n  <body>\n      <div>\n          <img [src]=\"(featuredPhotoStream | async)?.url1\" alt=\"login page\" width=\"500px\" height=\"500px\">\n      <button (click)=\"login()\" class=\"text\"><i class=\"fa fa-google\" style=\"font-size:25px;color:red\"></i>Login with Google</button>\n      <p class=\"text1\">Welcome To Oshop!</p>\n       </div>\n  </body>\n</html>"
+module.exports = "<html>\n  <head>\n          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n          <title>login</title>\n          <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\n  </head>\n  <body>\n      <div>\n          <img [src]=\"(featuredPhotoStream | async)?.url1\" alt=\"login page\" width=\"500px\" height=\"500px\" >\n      \n          <button (click)=\"login()\" class=\"text\"><i class=\"fa fa-google\" style=\"font-size:25px;color:red\"></i>Login with Google</button>\n          \n      \n          <p class=\"text1\">Welcome To Bumblebee!</p>\n          <a routerLink=\"/login/phone/number\" class=\"btn btn-primary\">Login with Phone Number</a>\n       </div>\n  </body>\n</html>"
 
 /***/ }),
 
@@ -1520,6 +1528,9 @@ var OrderService = /** @class */ (function () {
     OrderService.prototype.get = function (orderId) {
         return this.db.object('/orders/' + orderId);
     };
+    OrderService.prototype.delete = function (orderId) {
+        return this.db.object('/orders/' + orderId).remove();
+    };
     OrderService.prototype.getOrdersByUser = function (userId) {
         return this.db.list('/orders', {
             query: {
@@ -1539,6 +1550,108 @@ var OrderService = /** @class */ (function () {
 
 //let id = this.route.snapshot.paramMap.get('id');
 //if (id) this.orderService.get(id).take(1).subscribe(o => this.order = o);
+
+
+/***/ }),
+
+/***/ "./src/app/phone/phone.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/phone/phone.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Bob25lL3Bob25lLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/phone/phone.component.html":
+/*!********************************************!*\
+  !*** ./src/app/phone/phone.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div [hidden]=\"user\">\n  <h1>Sign In with Your Phone Number</h1>\n\n  <label for=\"phone\">Phone Number</label><br>\n  <input type=\"text\" [(ngModel)]=\"phoneNumber.country\"  class=\"input\" placeholder=\"1\"    maxlength=\"3\">\n  <input type=\"text\" [(ngModel)]=\"phoneNumber.area\"     class=\"input\" placeholder=\"949\"  maxlength=\"3\">\n  <input type=\"text\" [(ngModel)]=\"phoneNumber.prefix\"   class=\"input\" placeholder=\"555\"  maxlength=\"3\">\n  <input type=\"text\" [(ngModel)]=\"phoneNumber.line\"     class=\"input\" placeholder=\"5555\" maxlength=\"4\">\n\n  <div id=\"recaptcha-container\"></div>\n\n  <button (click)=\"sendLoginCode()\">SMS Text Login Code</button>\n\n  <div *ngIf=\"windowRef.confirmationResult\">\n    <hr>\n    <label for=\"code\">Enter your Verification Code Here</label><br>\n    <input type=\"text\" name=\"code\" [(ngModel)]=\"verificationCode\">\n\n    <button (click)=\"verifyLoginCode()\">Verify</button>\n  </div>\n\n</div>\n\n<div *ngIf=\"user\">\n  You have successfully logged in with your phone number!\n\n  UserId: {{ user?.uid }}\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/phone/phone.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/phone/phone.component.ts ***!
+  \******************************************/
+/*! exports provided: PhoneNumber, PhoneComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhoneNumber", function() { return PhoneNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PhoneComponent", function() { return PhoneComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _window_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../window.service */ "./src/app/window.service.ts");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/firebase-browser.js");
+/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var PhoneNumber = /** @class */ (function () {
+    function PhoneNumber() {
+    }
+    Object.defineProperty(PhoneNumber.prototype, "e164", {
+        // format phone numbers as E.164
+        get: function () {
+            var num = this.country + this.area + this.prefix + this.line;
+            return "+" + num;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return PhoneNumber;
+}());
+
+var PhoneComponent = /** @class */ (function () {
+    function PhoneComponent(win) {
+        this.win = win;
+        this.phoneNumber = new PhoneNumber();
+    }
+    PhoneComponent.prototype.ngOnInit = function () {
+        this.windowRef = this.win.windowRef;
+        this.windowRef.recaptchaVerifier = new firebase__WEBPACK_IMPORTED_MODULE_3__["auth"].RecaptchaVerifier('recaptcha-container');
+        this.windowRef.recaptchaVerifier.render();
+    };
+    PhoneComponent.prototype.sendLoginCode = function () {
+        var _this = this;
+        var appVerifier = this.windowRef.recaptchaVerifier;
+        var num = this.phoneNumber.e164;
+        firebase__WEBPACK_IMPORTED_MODULE_3__["auth"]().signInWithPhoneNumber(num, appVerifier)
+            .then(function (result) {
+            _this.windowRef.confirmationResult = result;
+        })
+            .catch(function (error) { return console.log(error); });
+    };
+    PhoneComponent.prototype.verifyLoginCode = function () {
+        var _this = this;
+        this.windowRef.confirmationResult
+            .confirm(this.verificationCode)
+            .then(function (result) {
+            _this.user = result.user;
+            console.log(_this.user);
+        })
+            .catch(function (error) { return console.log(error, "Incorrect code entered?"); });
+    };
+    PhoneComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-phone',
+            template: __webpack_require__(/*! ./phone.component.html */ "./src/app/phone/phone.component.html"),
+            styles: [__webpack_require__(/*! ./phone.component.css */ "./src/app/phone/phone.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_window_service__WEBPACK_IMPORTED_MODULE_2__["WindowService"]])
+    ], PhoneComponent);
+    return PhoneComponent;
+}());
+
 
 
 /***/ }),
@@ -2347,7 +2460,7 @@ module.exports = ".header {\r\n    font-size: 30px;\r\n    font-weight: bold;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n<head>\n    <title></title>\n    <style type=\"text/css\">\n        body\n        {\n            font-family: Arial;\n            font-size: 10pt;\n        }\n        table\n        {\n            border: 1px solid #ccc;\n            border-collapse: collapse;\n        }\n        table th\n        {\n            background-color: #F7F7F7;\n            color: #333;\n            font-weight: bold;\n        }\n        table th, table td\n        {\n            padding: 5px;\n            border: 1px solid #ccc;\n        }\n    </style>\n</head>\n<body>\n        <div id=\"content\" #content>\n\n            <h2 style=\"text-align:center;\">Order Summary </h2>\n          \n            <div class=\"header\">\n              Health Stream or Health Center\n            </div>\n           \n            <div class=\"address\" *ngIf=\"order$ | async as order\">\n              <div class=\"for\">\n                <h3>Invoice For</h3>\n                <p>\n                  {{order.shipping.name}} <br /> {{order.shipping.addressLine1}} <br /> {{order.shipping.addressLine2}}, {{order.shipping.city}} \n                </p>\n              </div>\n          \n              <div class=\"from\">\n                <h3>From</h3>\n                <p>\n                    \n                  Rajesh Sharma<br /> Main Market Ln Block E<br /> Hauz Khas New Delhi, 110016\n                </p>\n              </div>\n            </div>\n          \n          \n            <div>\n              <h4 style=\"padding-top:10px;\">Order Details</h4>\n              <table class=\"table\" *ngIf=\"order$ | async as order\">\n                  <thead>\n                    <tr>\n                      <th>ProductName</th> \n                      <th>Price</th>\n                      <th>Quantity</th>\n                      <th>TotalPrice</th> \n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let item of order.items\">\n                      <td> {{ item.product.title }} </td>\n                      <td> {{ item.product.price | currency: \"&#8377;\": true }} </td>\n                      <td> {{ item.quantity }} </td>\n                      <td> {{ item.totalPrice | currency: \"&#8377;\": true }} </td>\n                    </tr>\n                    <tr>\n                      <th>Total</th>\n                      <td> </td>\n                      <td> {{ this.SumOfQuantity }} </td>\n                      <td> {{ this.SumOfPrice | currency: \"&#8377;\": true }} </td>\n                    </tr>\n                  </tbody>\n                </table>\n                \n                <div class=\"signature\">\n                  Signature: ________________\n                </div>\n            </div>\n          </div>\n          \n<br>\n<br>\n          <div>\n              <button (click)=\"downloadPDF()\">\n                Save Bill\n              </button>\n            </div>\n</body>\n</html>\n\n\n\n\n\n\n\n  \n\n\n\n\n\n"
+module.exports = "<html>\n<head>\n    <title></title>\n    <style type=\"text/css\">\n        body\n        {\n            font-family: Arial;\n            font-size: 10pt;\n        }\n        table\n        {\n            border: 1px solid #ccc;\n            border-collapse: collapse;\n        }\n        table th\n        {\n            background-color: #F7F7F7;\n            color: #333;\n            font-weight: bold;\n        }\n        table th, table td\n        {\n            padding: 5px;\n            border: 1px solid #ccc;\n        }\n    </style>\n</head>\n<body>\n        <div id=\"content\" #content>\n\n            <h2 style=\"text-align:center;\">Order Summary </h2>\n          \n            <div class=\"header\">\n              Bumblebee\n            </div>\n           \n            <div class=\"address\" *ngIf=\"order$ | async as order\">\n              <div class=\"for\">\n                <h3>Invoice For</h3>\n                <p>\n                  {{order.shipping.name}} <br /> {{order.shipping.addressLine1}} <br /> {{order.shipping.addressLine2}}, {{order.shipping.city}} \n                </p>\n              </div>\n          \n              <div class=\"from\">\n                <h3>From</h3>\n                <p>\n                    \n                  Rajesh Sharma<br /> Main Market Ln Block E<br /> Hauz Khas New Delhi, 110016\n                </p>\n              </div>\n            </div>\n          \n          \n            <div>\n              <h4 style=\"padding-top:10px;\">Order Details</h4>\n              <table class=\"table\" *ngIf=\"order$ | async as order\">\n                  <thead>\n                    <tr>\n                      <th>ProductName</th> \n                      <th>Price</th>\n                      <th>Quantity</th>\n                      <th>TotalPrice</th> \n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let item of order.items\">\n                      <td> {{ item.product.title }} </td>\n                      <td> {{ item.product.price | currency: \"&#8377;\": true }} </td>\n                      <td> {{ item.quantity }} </td>\n                      <td> {{ item.totalPrice | currency: \"&#8377;\": true }} </td>\n                    </tr>\n                    <tr>\n                      <th>Total</th>\n                      <td> </td>\n                      <td> {{ this.SumOfQuantity }} </td>\n                      <td> {{ this.SumOfPrice | currency: \"&#8377;\": true }} </td>\n                    </tr>\n                  </tbody>\n                </table>\n                \n                <div class=\"signature\">\n                  Signature: ________________\n                </div>\n                <br>\n                <br>\n            </div>\n          </div>\n          \n\n          <div>\n              <button class=\"btn btn-primary\" (click)=\"downloadPDF()\">Save Bill</button>\n              <button type=\"button\" (click)=\"delete()\" class=\"btn btn-danger\">Delete</button>\n              <br>\n          </div>\n</body>\n</html>\n\n\n\n\n\n\n\n  \n\n\n\n\n\n"
 
 /***/ }),
 
@@ -2380,18 +2493,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var ViewOrderComponent = /** @class */ (function () {
-    function ViewOrderComponent(route, db, orderService) {
+    function ViewOrderComponent(router, route, db, orderService) {
         var _this = this;
+        this.router = router;
         this.route = route;
         this.db = db;
         this.orderService = orderService;
         this.SumOfQuantity = 0;
         this.SumOfPrice = 0;
-        var orderId = route.snapshot.paramMap.get('id');
-        this.order$ = orderService.get(orderId);
-        orderService.get(orderId).subscribe(function (orders) {
+        this.orderId = route.snapshot.paramMap.get('id');
+        this.order$ = orderService.get(this.orderId);
+        orderService.get(this.orderId).subscribe(function (orders) {
             _this.orders = orders;
-            _this;
             for (var _i = 0, _a = orders.items; _i < _a.length; _i++) {
                 var item = _a[_i];
                 _this.SumOfQuantity = _this.SumOfQuantity + item.quantity;
@@ -2416,6 +2529,12 @@ var ViewOrderComponent = /** @class */ (function () {
             });
         }
     };
+    ViewOrderComponent.prototype.delete = function () {
+        if (!confirm('Are you sure yow want to delete this product?'))
+            return;
+        this.orderService.delete(this.orderId);
+        this.router.navigate(['my/orders']);
+    };
     ViewOrderComponent.prototype.ngOnInit = function () {
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2432,11 +2551,49 @@ var ViewOrderComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./view-order.component.html */ "./src/app/view-order/view-order.component.html"),
             styles: [__webpack_require__(/*! ./view-order.component.css */ "./src/app/view-order/view-order.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"],
             angularfire2_database__WEBPACK_IMPORTED_MODULE_2__["AngularFireDatabase"],
             _order_service__WEBPACK_IMPORTED_MODULE_3__["OrderService"]])
     ], ViewOrderComponent);
     return ViewOrderComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/window.service.ts":
+/*!***********************************!*\
+  !*** ./src/app/window.service.ts ***!
+  \***********************************/
+/*! exports provided: WindowService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WindowService", function() { return WindowService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var WindowService = /** @class */ (function () {
+    function WindowService() {
+    }
+    Object.defineProperty(WindowService.prototype, "windowRef", {
+        get: function () {
+            return window;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    WindowService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], WindowService);
+    return WindowService;
 }());
 
 

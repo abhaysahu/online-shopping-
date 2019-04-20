@@ -15,7 +15,6 @@ import * as $ from "jquery";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
-import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
@@ -42,6 +41,11 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
 import { DevelopersComponent } from './developers/developers.component';
 import { ParticlesModule } from 'angular-particle';
+import { PhoneComponent } from './phone/phone.component';
+import { WindowService } from './window.service';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { FirstpageComponent } from './firstpage/firstpage.component';
+
 //import { ProductCardComponent } from './product-card/product-card.component';
 
 
@@ -49,7 +53,7 @@ import { ParticlesModule } from 'angular-particle';
   declarations: [
     AppComponent,
     BsNavbarComponent,
-    HomeComponent,
+    FirstpageComponent,
     ProductsComponent,
     ShoppingCartComponent,
     CheckOutComponent,
@@ -66,6 +70,10 @@ import { ParticlesModule } from 'angular-particle';
     ShippingFormComponent,
     ViewOrderComponent,
     DevelopersComponent,
+    PhoneComponent,
+    WelcomeComponent,
+    FirstpageComponent,
+    
     
   ],
   imports: [
@@ -81,10 +89,12 @@ import { ParticlesModule } from 'angular-particle';
     AngularFireAuthModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: ProductsComponent },
+      { path: '', component: WelcomeComponent },
+      { path: 'firstpage', component: FirstpageComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'login/phone/number', component: PhoneComponent },
       { path: 'developer', component: DevelopersComponent},
 
       { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuardService] },
@@ -126,7 +136,8 @@ import { ParticlesModule } from 'angular-particle';
     CategoryService,
     ProductService,
     ShoppingCartService,
-    OrderService
+    OrderService,
+    WindowService
   ],
   bootstrap: [AppComponent]
 })
