@@ -13,11 +13,15 @@ export class ProductCardComponent  {
   @Input('show-actions') showActions = true;
   @Input ('shopping-cart') shoppingCart: ShoppingCart;
   
+ 
+  
 
-  constructor(private cartService: ShoppingCartService) { }
+  constructor(private cartService: ShoppingCartService) {
 
-  addToCart(){
-    //let cart = this.cartService.getOrCreateCart();
+   }
+
+  addToCart(){ //let cart = this.cartService.getOrCreateCart();
     this.cartService.addToCart(this.product);  
   }
 }
+ 

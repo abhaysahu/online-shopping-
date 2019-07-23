@@ -5,6 +5,7 @@ export class ShoppingCartItem {
     title: string;
     imageUrl: string;
     price: number; 
+    code: string;
     quantity: number;
 
 

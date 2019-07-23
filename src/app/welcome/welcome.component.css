@@ -50,7 +50,7 @@
 .content-carrousel figure:nth-child(2){
     transform: rotateY(40deg) translateZ(350px);
 }
-.content-carrousel figure:nth-child(3){
+.content-carrousel figure:nth-child(3){ 
     transform: rotateY(80deg) translateZ(350px);
 }
 .content-carrousel figure:nth-child(4){

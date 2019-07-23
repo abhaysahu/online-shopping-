@@ -1,19 +1,73 @@
+<dashboard></dashboard>
+
+<div class="container">
+  <br>
+
 <h1>Admin Manages Orders</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Customer</th> 
-      <th>Date</th>
-      <th>Details</th> 
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of orders$ | async">
-      <td>{{order.shipping.name}}</td>
-      <td>{{order.dataPlaced | date}}</td> 
-      <td>
-        <a [routerLink]="['/view/orders/', order.$key]">View</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+
+<p>
+  <input
+    #query 
+    (keyup)="filter(query.value)"
+    type="text" class="form-control" placeholder="Search...">
+</p>
+
+
+<data-table
+  [items]="items"
+  [itemCount]="itemCount"
+  (reload)="reloadItems($event)"
+>
+<!-- 
+<data-table-column
+    [property]="'$key'"
+    [header]="'OrderId'"
+    [sortable]="true"
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{ item.$key }}
+  </ng-template>
+  </data-table-column> -->
+ 
+  <data-table-column
+    [property]="'name'"
+    [header]="'Name'"
+    [sortable]="true"
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{item.shipping.name}}
+  </ng-template>
+  </data-table-column>
+
+  <data-table-column
+    [property]="'date'"
+    [header]="'Date'"
+    [sortable]="true"
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{item.dataPlaced | date}}
+  </ng-template>
+  </data-table-column> 
+ 
+  <data-table-column
+    [property]="'$key'"
+    [header]="'Bill'"
+  >
+  <ng-template #dataTableCell let-item="item">
+    <a [routerLink]="['/view/orders/', item.$key]">Genrate</a>
+  </ng-template>
+</data-table-column>
+
+<data-table-column
+    [property]="'$key'"
+    [header]="'Orders'"
+  >
+  <ng-template #dataTableCell let-item="item">
+    <a [routerLink]="['/view/orders/details', item.$key]">View</a>
+  </ng-template>
+</data-table-column>
+</data-table>
+</div>

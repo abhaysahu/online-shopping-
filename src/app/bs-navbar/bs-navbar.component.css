@@ -2,3 +2,8 @@
 .dropdown-toggle{
     cursor: pointer;
 }
+
+.bg-blue {background-color:#007EDB;}
+.navbar-brand img { height:30px; }
+.navbar-dark .navbar-nav .nav-link {color:#fff;}
+.navbar-dark .navbar-nav .active .nav-link {color:#fff;} 

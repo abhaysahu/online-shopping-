@@ -6,7 +6,7 @@ import { ShoppingCartService } from './shopping-cart.service';
   providedIn: 'root'
 })
 export class OrderService {
-  
+   
 
   constructor(private db: AngularFireDatabase, private shoppingCartService: ShoppingCartService) { }
 
@@ -29,7 +29,16 @@ export class OrderService {
     return this.db.object('/orders/' + orderId).remove();
   }
 
- 
+  update(statu,orderId)
+  {
+    return this.db.object('/orders/' + orderId + '/order/' + statu).update({
+      
+      status: "true",
+      dataCreated: new Date().getTime()
+    });
+
+  }
+
 
   getOrdersByUser(userId: string){
     return this.db.list('/orders', {

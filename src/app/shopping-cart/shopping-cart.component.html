@@ -1,19 +1,20 @@
-<h1>Shopping Cart </h1>
+<h1>{{ 'Shopping.ShoppingCart' | translate }} </h1>
 <div class="row col-10" *ngIf="cart$ | async as cart">
   <p>
-    You have {{ cart.totalItemsCount }} items in your shopping cart.
+    {{ 'Shopping.Detailes1' | translate }} {{ cart.totalItemsCount }} {{ 'Shopping.Detailes2' | translate }}
     <button
     *ngIf="cart.items.length"
     (click)="clearCart()"
-    class="btn btn-light btn-sm">Clear Shopping Cart</button>
+    class="btn btn-light btn-sm">{{ 'Shopping.ClearButton' | translate }}
+  </button>
   </p> 
-  <table class="table">
+  <table class="table"> 
     <thead>
       <tr>
         <th></th>
-        <th>Product</th>
-        <th class="text-center" style="width: 230px">Quantity</th>
-        <th class="text-right" style="width: 200px">Price</th>
+        <th>{{ 'Shopping.Product' | translate }}</th>
+        <th class="text-center" style="width: 230px">{{ 'Shopping.Quantity' | translate }}</th>
+        <th class="text-right" style="width: 200px">{{ 'Shopping.Price' | translate }}</th>
       </tr>
     </thead>
     <tbody>
@@ -22,13 +23,20 @@
           <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail"></div>
         </td>    
         <td>
-          {{ item.title }}
+            <div *ngIf="show; else elseBlock">{{ item.title }}</div>
+            <ng-template #elseBlock>{{ item.titleH }}</ng-template>
         </td>
         <td>
           <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
         </td>
         <td class="text-right">
-          {{ item.totalPrice | currency: "&#8377;" : true }}
+            <div *ngIf="!item.offer; else elseBlock">
+                <p class="card-text">{{ (item.price) * item.quantity | currency: "&#8377;": true}} 
+                </p>
+            </div>
+                    <ng-template #elseBlock>
+                          <p> {{ item.totalPrice }}</p>   
+                    </ng-template>
         </td>
       </tr>  
     </tbody>
@@ -44,5 +52,5 @@
   <a
     *ngIf="cart.items.length"
     routerLink="/check-out" 
-    class="btn btn-primary">Check Out</a>
+    class="btn btn-primary">{{ 'Shopping.CheckOut' | translate }}</a>
 </div>

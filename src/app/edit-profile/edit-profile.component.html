@@ -1,0 +1,46 @@
+<dashboard></dashboard>
+<div class="row">
+  <div class="col-md-8">
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+
+
+          <div class="form-group">
+              <label for="name">Name </label>
+              <input #name="ngModel" [(ngModel)]="user.name" name="name" id="name" type="text" class="form-control" required placeholder="Big Name">
+              <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                Product Full Name is Required.
+              </div>
+          </div>
+
+
+          <div class="form-group"> 
+              <label for="number">Number</label>
+              <div class="input-group-prepend">
+                <input #number="ngModel" [(ngModel)]="user.number" name="number" id="number" type="number" class="form-control" placeholder="35.00" required [min]="0">
+              </div> 
+              <div class="alert alert-danger" *ngIf="number.touched && number.invalid">
+                <div *ngIf="number.errors.required">Number is required.</div>
+             </div>  
+            </div>
+
+            <div class="form-group">
+                <label>Select Language</label>
+                <div class="form-control">
+                  <label for="male" class="radio-inline">
+                    <input type="radio" value="male" name="gender" [(ngModel)]="user.gender">
+                     Male
+                  </label>
+    
+                  <label for="female" class="radio-inline">
+                      <input type="radio" value="female" name="gender" [(ngModel)]="user.gender">
+                      Female
+                    </label>
+                </div>
+            </div>
+    
+
+          
+            <button class="btn btn-primary">Save</button>
+       </form>
+  </div>
+</div>

@@ -8,28 +8,46 @@ export class ProductService {
 
   constructor(private db: AngularFireDatabase) { }
 
-  create(product)
+  //create the product part.
+ 
+
+  createBoth(product,key)
   {
-    return this.db.list('/product').push(product);
+    const toSend = this.db.object(`/product/both/${key}`)
+    toSend.set(product);
   }
   
 
+
+
+  //get all the data from  product in hindi or english.
+
   getAll()
   {
-    return this.db.list('/product');
+    return this.db.list('/product/english');
   }
 
-  get(productId)
+
+  getAllBoth()
   {
-    return this.db.object('/product/' + productId)
+    return this.db.list('/product/both');
   }
 
-  update(productId,product){
-    return this.db.object('/product/' + productId).update(product);
-  }
 
-  delete(productId)
+  getBoth(productId)
   {
-    return this.db.object('/product/' + productId).remove();
+    return this.db.object('/product/both/' + productId)
   }
+
+
+  updateBoth(productId,product){
+    return this.db.object('/product/both/' + productId).update(product);
+  }
+
+
+  deleteBoth(productId)
+  {
+    return this.db.object('/product/both/' + productId).remove();
+  }
+
 }

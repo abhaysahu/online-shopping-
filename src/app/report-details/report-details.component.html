@@ -1,0 +1,127 @@
+<dashboard></dashboard>
+
+<div class="container">
+
+  <h1>{{ productCode }}</h1>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Complete Report</button>
+    <br>
+
+    
+    <data-table
+      [items]="items"
+      [itemCount]="itemCount"
+      (reload)="reloadItems($event)" 
+    >
+
+
+    <data-table-column
+        [property]="'name'"
+        [header]="'Name'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+      </data-table-column>
+
+      <data-table-column
+    [property]="'date'"
+    [header]="'Date'"
+    [sortable]="true"
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{item.date | date}}
+  </ng-template>
+  </data-table-column> 
+     
+      <data-table-column
+        [property]="'quantity'"
+        [header]="'Quantity'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+        <ng-template #dataTableCell let-item="item">
+          {{ item.quantity }}
+        </ng-template>
+
+      </data-table-column>
+    
+      <data-table-column
+        [property]="'purchasePrice'"
+        [header]="'Stock Price'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.purchasePrice | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column> 
+
+
+      <data-table-column
+        [property]="'totalPrice'"
+        [header]="'Total(Purchase)'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.quantity * item.purchasePrice | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column>
+
+      <data-table-column
+        [property]="'price'"
+        [header]="'Selling Price'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.price | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column>
+
+      <data-table-column
+        [property]="'totalPrice'"
+        [header]="'Total(selling)'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.totalPrice | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column>
+     
+      
+    </data-table>
+</div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" >Report of </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button> 
+            </div>
+            <div class="modal-body">
+              <p>
+                 Total item you have sold:-    {{ SumOfQuantity }} <br>
+                 Total Cost of Selling item:-  {{ SumOfSellingPrice }} <br>
+                 Total Cost of Purchase item:- {{ SumOfPurchasingPrice }} <br>
+                 Net Profite:-                 {{ SumOfSellingPrice - SumOfPurchasingPrice}} <br>
+                 
+
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">okk</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+

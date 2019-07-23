@@ -1,6 +1,5 @@
 import { ShoppingCartItem } from './shopping-cart-item';
 import { Product } from './product';
-import { isLoweredSymbol } from '@angular/compiler';
 
 export class ShoppingCart {
 
@@ -16,8 +15,8 @@ export class ShoppingCart {
           // price: item.price, 
         this.items.push( new ShoppingCartItem({ ...item,$key: productId })
         );
-
-      }
+      } 
+      
     }
 
     getQuantity(product: Product){  

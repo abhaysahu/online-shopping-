@@ -1,0 +1,108 @@
+<dashboard></dashboard>
+
+<div class="container">
+
+    <div>
+        <a class="abhay" routerLink="/admin/stock/new" class="btn btn-primary">New Stock</a>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Stock</button>
+        <br>
+        <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o" style="font-size:48px;color:blue"></i></button>
+
+    </div>
+  <br>
+
+  <p>
+      <input
+        #query 
+        (keyup)="filter(query.value)"
+        type="text" class="form-control" placeholder="{{ 'Product.Admin-Search' | translate }}">
+  </p>
+    
+    
+    <data-table
+      [items]="items"
+      [itemCount]="itemCount"
+      (reload)="reloadItems($event)"
+    >
+
+
+    <data-table-column
+        [property]="'code'"
+        [header]="'Code'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+      </data-table-column>
+     
+      <data-table-column
+        [property]="'name'"
+        [header]="'Name'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+      </data-table-column>
+    
+      <data-table-column
+        [property]="'price'"
+        [header]="'Price'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.price | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column> 
+
+
+      
+      <data-table-column
+        [property]="'stock'"
+        [header]="'Stock'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.stock }}
+      </ng-template>
+      </data-table-column>
+
+      <data-table-column
+        [property]="'total'"
+        [header]="'Total'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.stock * item.price }}
+      </ng-template>
+      </data-table-column>
+     
+      <data-table-column
+        [property]="'$key'"
+      >
+      <ng-template #dataTableCell let-item="item">
+          <a [routerLink]="['/admin/stock/', item.$key]">Edit</a>
+      </ng-template>
+    </data-table-column>
+    </data-table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Stock Quantity</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> 
+        </div>
+        <div class="modal-body">
+          <ppp></ppp>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">okk</button>
+        </div>
+      </div>
+    </div>
+  </div>

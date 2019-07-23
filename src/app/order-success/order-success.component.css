@@ -7,7 +7,12 @@
 }
 
 .text{
-    color: #860CD8;
+    color: #0E41B7;
+    text-decoration: underline;
     margin-left: 200px;
     margin-top: -30px;
+}
+
+.lead{
+    font-size: 25px;
 }

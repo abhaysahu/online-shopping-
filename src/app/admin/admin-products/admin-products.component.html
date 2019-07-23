@@ -1,12 +1,15 @@
+<dashboard></dashboard>
 
+<div class="container">
+  <br>
 <p>
-    <a routerLink="/admin/products/new" class="btn btn-primary">New Product</a>
+    <a class="abhay" routerLink="/admin/products/new" class="btn btn-primary">{{ 'Product.Add-Product' | translate }}</a>
 </p>
 <p>
   <input
     #query 
     (keyup)="filter(query.value)"
-    type="text" class="form-control" placeholder="Search...">
+    type="text" class="form-control" placeholder="{{ 'Product.Admin-Search' | translate }}">
 </p>
 
 
@@ -24,16 +27,41 @@
   >
   </data-table-column>
 
-  <data-table-column
-    [property]="'price'"
+  <data-table-column 
+    [property]="'price'" 
     [header]="'Price'"
-    [sortable]="true"
+    [sortable]="true" 
     [resizable]="true"
   >
   <ng-template #dataTableCell let-item="item">
     {{ item.price | currency:"&#8377;": true }}
   </ng-template>
   </data-table-column> 
+
+
+  <data-table-column 
+    [property]="'stock'" 
+    [header]="'Stock'"
+    [sortable]="true" 
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{ item.stock }}
+  </ng-template>
+  </data-table-column> 
+
+
+  <data-table-column 
+    [property]="'flat'" 
+    [header]="'Offer'"
+    [sortable]="true" 
+    [resizable]="true"
+  >
+  <ng-template #dataTableCell let-item="item">
+    {{ item.offer }} %
+  </ng-template>
+  </data-table-column> 
+ 
  
   <data-table-column
     [property]="'$key'"
@@ -43,3 +71,4 @@
   </ng-template>
 </data-table-column>
 </data-table>
+</div>

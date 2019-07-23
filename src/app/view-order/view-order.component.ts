@@ -16,7 +16,7 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./view-order.component.css']
 })
 export class ViewOrderComponent implements OnInit {
-
+ 
   
   @Input('cart') cart: OrderCart;
 
@@ -26,11 +26,11 @@ export class ViewOrderComponent implements OnInit {
   SumOfPrice=0;
   orderId
 
-  constructor(
+  constructor( 
     private router: Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, 
     private db: AngularFireDatabase,
-    private orderService: OrderService,) { 
+    private orderService: OrderService) { 
 
       this.orderId = route.snapshot.paramMap.get('id');
       this.order$ = orderService.get(this.orderId);
@@ -80,11 +80,8 @@ export class ViewOrderComponent implements OnInit {
       if(!confirm('Are you sure yow want to delete this product?')) return;
       
       this.orderService.delete(this.orderId);
-      this.router.navigate(['my/orders']);
-      
+      this.router.navigate(['admin/orders']); 
     }
-
-
 
 
   ngOnInit(){

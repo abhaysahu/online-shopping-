@@ -5,10 +5,6 @@ import { AuthService } from '../auth.service';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 
-interface FeaturedPhotosUrls {
-  url1?: string;
-  url2?: string;
-}
 
 @Component({
   selector: 'app-login',
@@ -17,16 +13,22 @@ interface FeaturedPhotosUrls {
 })
 export class LoginComponent {
 
-  featuredPhotoStream: FirebaseObjectObservable<FeaturedPhotosUrls>;
+  
 
   constructor(private db: AngularFireDatabase, public auth: AuthService) {
 
-    this.featuredPhotoStream = this.db.object('/photos');
   }
 
   login() 
   {
     this.auth.login();
+  }
+
+
+  loginFaceBook()
+  {
+    this.auth.loginFaceBook();
+
   }
 
 }

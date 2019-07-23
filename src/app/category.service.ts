@@ -8,8 +8,17 @@ export class CategoryService {
 
   constructor(private db: AngularFireDatabase) { }
 
-  getAll(){
-    return this.db.list('/categories', {
+  getAllEnglish(){
+    return this.db.list('/categories/English', {
+      query: {
+        orderByChild: 'name'
+      }
+    });
+  }
+
+
+  getAllHindi(){
+    return this.db.list('/categories/Hindi', {
       query: {
         orderByChild: 'name'
       }

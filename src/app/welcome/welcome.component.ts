@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
   myStyle: object = {};
-  myParams: object = {};
+  myParams: object = {}; 
   constructor() { }
 
   ngOnInit() {
@@ -15,7 +15,7 @@ export class WelcomeComponent implements OnInit {
     this.myStyle = {
       'position': 'fixed',
       'width': '100%',
-     'height': '100%',
+     'height': '100%', 
      'z-index': '0',
      'top': 0,
      'left': 0,

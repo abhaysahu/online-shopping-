@@ -4,7 +4,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 
 body { 
-    padding-top: 60px;
+    padding-top: 80px;
+    /* background-color:	#C90051; */
     margin: 0;}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

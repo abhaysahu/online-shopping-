@@ -61,10 +61,8 @@ export class PhoneComponent implements OnInit {
     this.windowRef.confirmationResult
                   .confirm(this.verificationCode)
                   .then( result => {
-
                     this.user = result.user;
                     console.log(this.user);
-
     })
     .catch( error => console.log(error, "Incorrect code entered?"));
   }
