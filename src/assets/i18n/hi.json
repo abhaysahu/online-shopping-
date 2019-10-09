@@ -6,7 +6,7 @@
     "LogOutLink": "लोग आउट",
     "Sel_lang": "भाषा चुनें",
     "Languages":{
-        "English":"English",
+        "English":"English", 
         "French":"फ्रेंच",
         "Chinese":"चीनी", 
         "Hindi":"हिंदी"
@@ -79,6 +79,10 @@
         "title": "शीर्षक",
         "price": "मूल्य",
         "Edit": "संपादित करें"
+    },
+
+    "someOther": {
+        "add_to_cart": "कार्ट में डालें"
     }
 
    

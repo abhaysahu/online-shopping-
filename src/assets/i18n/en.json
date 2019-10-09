@@ -7,7 +7,7 @@
     "Sel_lang": "Chose Language",
     "Languages":{
         "English":"English",
-        "French":"French",
+        "French":"French", 
         "Chinese":"Chinese",
         "Hindi":"हिंदी"
     },
@@ -79,6 +79,10 @@
         "title": "Title",
         "price": "Price",
         "Edit": "Edit"
+    },
+
+    "someOther": {
+        "add_to_cart": "Add to cart"
     }
      
   }

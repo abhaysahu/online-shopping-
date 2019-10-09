@@ -65,9 +65,9 @@ export class ProductFormComponent implements OnInit {
     if (this.id) 
     {
       this.productService.getBoth(this.id).take(1).subscribe(p => {
-        this.product = p
-        this.nextAvailableKey = this.product.imageName
-        this.downloadUrl = this.product.imageUrl
+        this.product = p;
+        this.nextAvailableKey = this.product.imageName;
+        this.downloadUrl = this.product.imageUrl;
 
       });
       
