@@ -60,7 +60,7 @@ export class ViewOrderComponent implements OnInit {
     var data = document.getElementById('content');  
     html2canvas(data).then(canvas => {  
       // Few necessary setting options  
-      var imgWidth = 200;   
+      var imgWidth = 200;    
       var pageHeight = 400;    
       var imgHeight = canvas.height * imgWidth / canvas.width;  
       var heightLeft = imgHeight;  

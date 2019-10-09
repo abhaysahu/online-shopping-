@@ -1,0 +1,86 @@
+{
+    "MyOrdersLink": "मेरा आदेश",
+    "ManageOrdersLink": "व्यवस्थापक आदेश", 
+    "ManageProductsLink": "व्यवस्थापक उत्पाद",
+    "LoginLink": "लॉग इन करें",
+    "LogOutLink": "लोग आउट",
+    "Sel_lang": "भाषा चुनें",
+    "Languages":{
+        "English":"English",
+        "French":"फ्रेंच",
+        "Chinese":"चीनी", 
+        "Hindi":"हिंदी"
+    },
+    "Footer":{
+        "Divinector": "दुकान के बारे में",
+        "Place": "लड़कियों के लिए खरीदारी करने के लिए एक नई जगह, हमारे पास मॉर्डन पर्स, सभी आयातित लहंगे, फैंसी नाइटी, कॉस्मेटिक्स, नकली आभूषण, जींस, टॉप, कुर्ती हैं",
+        "Owner": "दूकान का मालिक",
+        "OwnerName": "घनश्याम साहू",
+        "OwnerNumber": "9424658428",
+        "OwnerEmail": "shyam.sap01@gmail.com",
+        "OwnerAddress":"हनुमान कॉलोनी, राजश्री ए बी रोड गुना के सामने",
+        
+        "Develop": "द्वारा निर्मित",
+        "DevelopName": "अभय साहू",
+        "DevelopNumber": "9617625945",
+        "DevelopEmail": "sahua545@gmail.com",
+        "DevelopAddress":"सुभाष कॉलोनी ए.बी रोड गुना",
+
+        "Photo": "चित्र प्रदर्शनी"
+    },
+
+    "Shopping": {
+        "ShoppingCart" : "शॉपिंग कार्ट",
+        "Detailes1": "आपके शॉपिंग कार्ट में",
+        "Detailes2": "आइटम हैं।",
+        "ClearButton": "खरीदारी कार्ट साफ़ करें",
+        "Product": "उत्पाद",
+        "Quantity": "मात्रा",
+        "Price": "मूल्य",
+        "Cart": "कार्ट में",
+        "CheckOut": "चेक आउट",
+        "Order": "ऑर्डर का विवरण",
+        "Total": "कुल कीमत", 
+        "Size": "आकार के बारे में",
+        "DesProduct": "उत्पाद का आकार"
+
+    },
+
+    "Shipping": {
+        "Shopping": "खरीदारी",
+        "Name": "नाम",
+        "PlaceName": "पूरा नाम",
+        "NameRequired": "नाम आवश्यक है",
+        "Address": "पता",
+        "PlaceAddress": "पूरा पता",
+        "AddressRequired": "पता आवश्यक है",
+        "Pnumber": "फ़ोन नंबर",
+        "PlacePnumber": "वैध फोन नंबर (9617625945)",
+        "PnumberRequired": "नंबर की आवश्यकता है",
+        "City": "सिटी और पिनकोड",
+        "PlaceCity": "सिटी, पिनकोड (गुना, 473001)",
+        "CityRequired": "शहर की आवश्यकता है",
+        "AboutSize": "आकार के बारे में",
+        "PlaceAboutSize": "एक पंक्ति में केवल एक उत्पाद का आकार",
+        "AboutSizeRequired": "आकार का विवरण आवश्यक है",
+        "Place": "आदेश देना",
+        "OrderSummary": "आदेश सारांश",
+        "Order1": "आपके शॉपिंग कार्ट में ",
+        "Order2": "आइटम हैं।",
+        "Totle": "संपूर्ण"
+    },
+
+    "Product": {
+        "Category": "श्रेणियाँ",
+        "All-Categories": "सब श्रेणियाँ",
+        "Search": "खोज उत्पाद",
+        "Add-Product": "नया उत्पाद",
+        "Admin-Search": "आइटम खोजें", 
+        "title": "शीर्षक",
+        "price": "मूल्य",
+        "Edit": "संपादित करें"
+    }
+
+   
+  }
+  

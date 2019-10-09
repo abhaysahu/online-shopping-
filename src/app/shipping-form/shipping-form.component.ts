@@ -74,7 +74,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
       // status["order"] = "Order receive";
       // status["delivery"] = "Delivery to boy";
       // status["leave"] = "leave from Shop";
-      // status["process"] = "On The Way";
+      // status["process"] = "On The Way"; 
       // status["city"] = "In Your City";
       // status["receive"] = "Order is receive";
 
