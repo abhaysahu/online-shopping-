@@ -1,0 +1,80 @@
+<dashboard></dashboard>
+<div class="container">
+        <div id="content" #content>
+
+            <h2 style="text-align:center;">Order Summary </h2>
+          
+            <div class="header">
+                THE SPARKLES
+            </div>
+           
+            <div class="address" *ngIf="order$ | async as order">
+              <div class="for">
+                <h3>Invoice For</h3>
+                <p>
+                  {{order.shipping.name}} <br /> {{order.shipping.addressLine1}} <br /> {{order.shipping.city}} <br /> {{order.shipping.addressLine2}}
+                </p>
+              </div>
+          
+              <div class="from">
+                <h3>From</h3>
+                <p>
+                    
+                  The Sparkles<br /> Hanuman Colony, Opposite of Rajshree Bhojnalaya <br /> Guna(473001) M.P  <br /> 9424658428
+                </p>
+              </div>
+            </div>
+
+            <img src="../../assets/3.jpg">
+            <img src="../../assets/4.jpg">
+            <img src="../../assets/5.jpg">
+          
+            <div>
+              <h4 style="padding-top:10px;">Order Details</h4>
+              <table class="table" *ngIf="order$ | async as order">
+                  <thead>
+                    <tr>
+                      <th>ProductName</th> 
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>TotalPrice</th> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of order.items">
+                      <td> {{ item.product.title }} </td>
+                      <td> {{ item.product.price | currency: "&#8377;": true }} </td>
+                      <td> {{ item.quantity }} </td>
+                      <td> {{ item.totalPrice | currency: "&#8377;": true }} </td>
+                    </tr>
+                    <tr>
+                      <th>Total</th>
+                      <td> </td>
+                      <td> {{ this.SumOfQuantity }} </td>
+                      <td> {{ this.SumOfPrice | currency: "&#8377;": true }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <div class="signature">
+                  Signature: ________________
+                </div>
+                <br>
+                <br>
+            </div>
+          </div>
+          
+
+          <div>
+              <button class="btn btn-primary" (click)="downloadPDF()">Save Bill</button>
+              <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+              <br>
+          </div>
+
+
+        </div> 
+
+
+
+
+

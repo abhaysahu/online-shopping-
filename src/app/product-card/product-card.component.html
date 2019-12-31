@@ -1,0 +1,38 @@
+<div *ngIf="product.title" class="card">
+    <a [routerLink]="['/products/details/', product.$key]" data-toggle="tooltip" data-placement="right" title="Click to Shop" >
+  <img *ngIf="product.imageUrl" height="270" width="40" class="card-img-top" [src]="product.imageUrl" alt="{{ product.title }}">
+  </a> 
+ 
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+
+    <div *ngIf="!product.offer; else elseBlock">
+        <p class="card-text" style="color: #B12704; font-size: 21px">{{ product.price | currency: "&#8377;": true}} 
+          <p style="color: green; font-size: 16px">No Offer
+        </p>
+    </div>
+            <ng-template #elseBlock>
+              <p class="card-text">
+                  <div>  
+                  <p style="color: #B12704; font-size: 21px"> {{ (product.price) - (product.price * (product.offer/100))  }}
+                      <del style="color: black; font-size: 14px">{{ product.price | currency: "&#8377;": true}}</del>
+                      <span style="color: black; font-size: 14px"> Save {{ (product.price * (product.offer/100)) | currency: "&#8377;": true }} </span>
+                      <span style="color: green; font-size: 16px">  {{ product.offer }}% Off</span>
+                  
+                  </p>
+                  
+                </div>
+              
+            </ng-template>
+    
+  </div> 
+  <div *ngIf="showActions && shoppingCart" class="card-footer">
+    <button  
+      *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuantity "
+      (click)="addToCart()"
+      class="btn btn-secondary btn-block">{{ 'someOther.add_to_cart' | translate }}</button>
+      <ng-template #updateQuantity>
+        <product-quantity [product]="product" [shopping-cart]="shoppingCart"></product-quantity>
+      </ng-template> 
+  </div> 
+</div>  

@@ -1,0 +1,20 @@
+<div class="card"> 
+  <div class="card-body">
+    <h5 class="card-title">{{ 'Shipping.OrderSummary' | translate }}</h5>
+    <p class="card-text">{{ 'Shipping.Order1' | translate }} {{ cart.totalItemsCount }} {{ 'Shipping.Order2' | translate }}</p>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of cart.items" class="list-group-item">
+        {{ item.quantity }} x {{ item.title }} x {{ item.code}}
+        <div class="float-right">
+          {{ item.totalPrice | currency:"&#8377;":true }}
+        </div>
+      </li>
+      <li class="list-group-item font-weight-bold">
+        {{ 'Shipping.Totle' | translate }}
+        <div class="float-right">
+          {{ cart.totalPrice | currency:"&#8377;":true }}
+        </div>
+      </li>
+    </ul>
+  </div> 
+</div> 

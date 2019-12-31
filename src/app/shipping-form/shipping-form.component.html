@@ -1,0 +1,47 @@
+<form #f="ngForm">
+    <div class="form-group">
+      <label for="">{{ 'Shipping.Name' | translate }}</label>
+      <input #name="ngModel" name="name" [(ngModel)]="shipping.name" type="text" class="form-control" required placeholder="{{ 'Shipping.PlaceName' | translate }}">
+      <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+        <div *ngIf="name.errors.required">{{ 'Shipping.NameRequired' | translate }}</div>
+      </div>
+      <br> 
+    </div> 
+    <div class="form-group">
+      <label for="">{{ 'Shipping.Address' | translate }}</label>
+      <input #addressLine1="ngModel" name="addressLine1" [(ngModel)]="shipping.addressLine1" type="text" class="form-control" placeholder="{{ 'Shipping.PlaceAddress' | translate }}"
+        required>
+      <div class="alert alert-danger" *ngIf="addressLine1.touched && addressLine1.invalid">
+        <div *ngIf="addressLine1.errors.required">{{ 'Shipping.AddressRequired' | translate }}</div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group"> 
+      <label for="">{{ 'Shipping.Pnumber' | translate }}</label>
+      <input #addressLine2="ngModel" name="addressLine2" [(ngModel)]="shipping.addressLine2" type="text" class="form-control" placeholder="{{ 'Shipping.PlacePnumber' | translate }}"
+        required>
+      <div class="alert alert-danger" *ngIf="addressLine2.touched && addressLine2.invalid">
+        <div *ngIf="addressLine2.errors.required">{{ 'Shipping.PnumberRequired' | translate }}</div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="">{{ 'Shipping.City' | translate }}</label>
+      <input #city="ngModel" name="city" [(ngModel)]="shipping.city" placeholder="{{ 'Shipping.PlaceCity' | translate }}" type="text" class="form-control" required>
+      <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+        <div *ngIf="city.errors.required">{{ 'Shipping.CityRequired' | translate }}</div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="description">{{ 'Shipping.AboutSize' | translate }}</label>
+          <textarea #description [(ngModel)]="shipping.description" name="description" id="description" tyoe="text" rows="8" cols="80" placeholder="{{ 'Shipping.PlaceAboutSize' | translate }}" class="form-control"></textarea>
+          <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+            <div *ngIf="description.errors.required">{{ 'Shipping.AboutSizeRequired' | translate }} </div>
+        </div>
+      </div>
+    <button  
+      [disabled]="!f.valid"
+      (click)="placeOrder()" 
+      class="btn btn-primary">{{ 'Shipping.Place' | translate }}</button>
+  </form>

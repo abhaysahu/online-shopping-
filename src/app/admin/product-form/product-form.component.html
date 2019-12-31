@@ -1,0 +1,152 @@
+<dashboard></dashboard>
+<div class="row">
+  <div class="col-md-8">
+    <form #f="ngForm" (ngSubmit)="save(f.value)">
+
+        <!-- <div class="form-group">
+            <label>Select Language</label>
+            <div class="form-control">
+              <label for="english" class="radio-inline">
+                <input type="radio" value="english" name="language" [(ngModel)]="product.language">
+                 English
+              </label>
+
+              <label for="hindi" class="radio-inline">
+                  <input type="radio" value="hindi" name="language" [(ngModel)]="product.language">
+                  Hindi
+                </label>
+            </div>
+        </div> -->
+
+
+          <div class="form-group">
+            <label for="code">Product Code</label>
+            <input #code="ngModel" [(ngModel)]="product.code" name="code" id="code" type="text" class="form-control" required placeholder="Product Code">
+            <div class="alert alert-danger" *ngIf="code.touched && code.invalid">
+              Product Code is required.
+            </div>
+          </div>
+
+          <div class="form-group">
+              <label for="name">Name In English</label>
+              <input #name="ngModel" [(ngModel)]="product.name" name="name" id="name" type="text" class="form-control" required placeholder="Big Name">
+              <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+                Product Full Name is Required.
+              </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="nameH">Name In Hindi</label>
+            <input #nameH="ngModel" [(ngModel)]="product.nameH" name="nameH" id="nameH" type="text" class="form-control" required placeholder="Big Name">
+            <div class="alert alert-danger" *ngIf="nameH.touched && nameH.invalid">
+              Product Full Name is Required.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required placeholder="Short Title">
+            <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+              Title is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="titleH">Title In Hindi</label>
+            <input #titleH="ngModel" [(ngModel)]="product.titleH" name="titleH" id="titleH" type="text" class="form-control" required placeholder="Short Title">
+            <div class="alert alert-danger" *ngIf="titleH.touched && titleH.invalid">
+              Title is required.
+            </div>
+          </div>
+
+          <div class="form-group"> 
+              <label for="price">Price</label>
+              <div class="input-group-prepend">
+                <span class="input-group-text">&#8377;</span>
+                <input #price="ngModel" [(ngModel)]="product.price" name="price" id="price" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="35.00" required [min]="0">
+              </div> 
+              <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors.required">Price is required.</div>
+                <div *ngIf="price.errors.min">Price should be 0 or higher.</div>
+              </div>  
+            </div>
+
+
+            <div class="form-group"> 
+                <label for="Offer">Offer</label>
+                <div class="input-group-prepend">
+                  <input #offer="ngModel" [(ngModel)]="product.offer" name="offer" id="offer" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="35.00" required [min]="0">
+                  <span class="input-group-text">%</span>
+                </div> 
+                <div class="alert alert-danger" *ngIf="offer.touched && offer.invalid">
+                  <div *ngIf="offer.errors.required">Price is required.</div>
+                  <div *ngIf="offer.errors.min">Price should be 0 or higher.</div>
+                </div>  
+              </div>
+
+
+            
+          <div class="form-group"> 
+              <label for="stock">Stock</label>
+              <div class="input-group-prepend">
+                <input #stock="ngModel" [(ngModel)]="product.stock" name="stock" id="stock" type="number" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="35.00" required [min]="0">
+              </div> 
+              <div class="alert alert-danger" *ngIf="stock.touched && stock.invalid">
+                <div *ngIf="stock.errors.required">stock is required.</div>
+                <div *ngIf="stock.errors.min">stcok should be 0 or higher.</div>
+              </div>  
+            </div>
+
+          <div class="form-group">
+              <label for="category">Category</label>
+              <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required>
+                <option value=""></option>  
+                <option *ngFor="let c of categories$ | async" [value]="c.$key">
+                  {{ c.name }}
+                </option>
+              </select>
+              <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+                  Category is required.
+              </div>
+          </div>
+        
+          <div class="form-group"> 
+              <label for="imageUrl"></label >
+
+                <button type="button" (click)="featuredInput1.click()">Upload Image</button>
+                <input #featuredInput1 style="display: none;" type="file" (change)="photoSelectedForList($event)">
+              <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl || downloadUrl" name="imageUrl" id="imageUrl" type= "text" class="form-control" required url placeholder="https://images.pexels.com/photos/39803/pexels-photo-39803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+              <input #imageName="ngModel" [(ngModel)]="product.imageName || nextAvailableKey" name="imageName" id="imageName" type= "text" class="form-control">
+              <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+                <div *ngIf="imageUrl.errors.required">Image URL is required.</div>
+                <div *ngIf="imageUrl.errors.url">please enter a valid URL.</div>  
+              </div>
+            </div>
+ 
+            <div class="form-group">
+                <label for="description">Description In English</label>
+                  <textarea #description [(ngModel)]="product.description" name="description" id="description" tyoe="text" rows="8" cols="80" placeholder="*Body" class="form-control"></textarea>
+                  <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+                    <div *ngIf="description.errors.required">description is required.</div>
+                </div>
+              </div>
+
+              
+            <div class="form-group">
+              <label for="descriptionH">Description In Hindi</label>
+                <textarea #descriptionH [(ngModel)]="product.descriptionH" name="descriptionH" id="descriptionH" tyoe="text" rows="8" cols="80" placeholder="*Body" class="form-control"></textarea>
+                <div class="alert alert-danger" *ngIf="descriptionH.touched && descriptionH.invalid">
+                  <div *ngIf="description.errors.required">description is required.</div>
+              </div>
+            </div>
+          
+            <button class="btn btn-primary">Save</button>
+            <button type="button" (click)="delete()" class="btn btn-danger">Delete</button>
+      </form>
+  </div>
+  <div class="col-md-4">
+    <product-card [product]="product" [show-actions]="false"></product-card>
+    
+  </div>
+</div>

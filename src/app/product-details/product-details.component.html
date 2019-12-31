@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compartible" content="ie=edge">
+	<title>Product Landing page</title>
+</head>
+<body>
+
+	<div class="container" *ngIf="products">
+    <img *ngIf="products.imageUrl" [src]="products.imageUrl" alt="{{ products.title }}">
+
+    <div class="product">
+			<!-- <p>{{ product.name }}</p> -->
+			<h1>{{ products.name }}</h1>
+      <h2> {{ products.price | currency: "&#8377;": true}}</h2>
+      
+			<pre class="desc">{{ products.description}}</pre>
+			<div class="buttons">
+				<button type="button" (click)="back()" class="add" >back</button>
+			</div>
+			
+		</div>	
+
+	</div>
+
+</body>
+</html>
+
+
+
+
