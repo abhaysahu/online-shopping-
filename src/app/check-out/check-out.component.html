@@ -1,3 +1,4 @@
+<div class="topping">
 <h2>{{ 'Shipping.Shopping' | translate }} </h2>
 <div class="row" *ngIf="cart$ | async as cart">
   <div class="col-6">
@@ -7,3 +8,4 @@
     <shopping-cart-summary [cart]="cart"></shopping-cart-summary>
   </div>
 </div> 
+</div>

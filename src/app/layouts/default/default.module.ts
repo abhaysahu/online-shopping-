@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 
 import { RouterModule } from '@angular/router';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
 import { ShardModule } from 'src/app/shard/shard/shard.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -15,7 +14,6 @@ import { DashboardsComponent } from 'src/app/modules/dashboards/dashboards.compo
   declarations: [
     DefaultComponent,
     DashboardsComponent,
-    PostsComponent
 
   ],
   imports: [

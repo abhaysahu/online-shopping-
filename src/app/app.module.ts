@@ -39,12 +39,10 @@ import { OrderService } from './order.service';
 import { ShoppingCartSummaryComponent } from './shopping-cart-summary/shopping-cart-summary.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { ViewOrderComponent } from './view-order/view-order.component';
-import { DevelopersComponent } from './developers/developers.component';
 import { ParticlesModule } from 'angular-particle';
 import { PhoneComponent } from './phone/phone.component';
 import { WindowService } from './window.service';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FirstpageComponent } from './firstpage/firstpage.component';
 import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -55,7 +53,6 @@ import { HttpModule, Http } from '@angular/http';
 import { MyMissingTranslationHandler } from './missingtemplate.component';
 import { NavbarModule } from './bs-navbar/bs-navbar.modules';
 import { CookieService } from 'ngx-cookie-service';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { StockComponent } from './stock/stock.component';
 import { StockFormComponent } from './stock-form/stock-form.component';
@@ -66,7 +63,6 @@ import { ReportDetailsComponent } from './report-details/report-details.componen
 import { ExcelService } from './excel.service';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { AdminViewDetailsComponent } from './admin-view-details/admin-view-details.component';
 import { DefaultModule } from './layouts/default/default.module';
 
 
@@ -81,7 +77,6 @@ export function createTranslateLoader(http: Http) {
   declarations: [
     AppComponent,
     BsNavbarComponent,
-    FirstpageComponent,
     ProductsComponent,
     ShoppingCartComponent,
     CheckOutComponent,
@@ -97,16 +92,13 @@ export function createTranslateLoader(http: Http) {
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
     ViewOrderComponent,
-    DevelopersComponent,
     PhoneComponent,
     WelcomeComponent,
-    FirstpageComponent,
     FooterComponent,
     ProductDetailsComponent,
     PppComponent,
     ViewDetailsComponent,
     BannerComponent,
-    DashboardComponent,
     CustomerDetailsComponent,
     StockComponent,
     StockFormComponent,
@@ -114,7 +106,6 @@ export function createTranslateLoader(http: Http) {
     ReportDetailsComponent,
     OrderStatusComponent,
     EditProfileComponent,
-    AdminViewDetailsComponent,
    
     
     
@@ -138,13 +129,11 @@ export function createTranslateLoader(http: Http) {
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: WelcomeComponent },
-      { path: 'firstpage', component: FirstpageComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'products/details/:id', component: ProductDetailsComponent},
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'login/phone/number', component: PhoneComponent },
-      { path: 'developer', component: DevelopersComponent},
+      // { path: 'login/phone/number', component: PhoneComponent },
       { path: 'ppp', component: PppComponent},
 
 
@@ -155,77 +144,16 @@ export function createTranslateLoader(http: Http) {
       { path: 'edit/profile', component: EditProfileComponent, canActivate: [AuthGuardService] },
       
      
-      { path: 'admin/products/new',
-        component: ProductFormComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-
-      { path: 'admin/stock/new',
-        component: StockFormComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-
       {
         path: 'order/status/:id',
         component: OrderStatusComponent,
       },
 
-
-
-      { path: 'admin/stock/:id',
-        component: StockFormComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-
-
-
-    
-
-      { path: 'Dashboard',
-        component: DashboardComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-
      
-
-     
-
-      { path: 'report/:id',
-        component: ReportDetailsComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-
-      { 
-        path: 'admin/products/:id',
-        component: ProductFormComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-      { 
-        path: 'admin/products',
-        component: AdminProductsComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
-     
-       {
-         path: 'footer',
-         component: FooterComponent
-
-       },
        { path: 'check-out/:id', component: CheckOutComponent, canActivate: [AuthGuardService , AdminAuthGuardService] },
 
-       { path: 'view/orders/:id',
-       component: ViewOrderComponent, 
-       canActivate: [AuthGuardService]
-       },
-       { path: 'view/orders/details/:id',
-       component: ViewDetailsComponent, 
-       canActivate: [AuthGuardService]
-       },
-       {
-         path: 'admin/view/orders/details/:id',
-         component: AdminViewDetailsComponent,
-         canActivate: [AuthGuardService]
-       },
+       
+       
       
     ]),
     MatTableModule,

@@ -2,7 +2,7 @@
 <div class="container">
 
     <div>
-        <a class="abhay" routerLink="/admin/stock/new" class="btn btn-primary">New Stock</a>
+        <a class="abhay" routerLink="/dashboards/admin/stock/new" class="btn btn-primary">New Stock</a>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Stock</button>
         <br>
         <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o" style="font-size:48px;color:blue"></i></button>
@@ -80,7 +80,7 @@
         [property]="'$key'"
       >
       <ng-template #dataTableCell let-item="item">
-          <a [routerLink]="['/admin/stock/', item.$key]">Edit</a>
+          <a [routerLink]="['/dashboards/admin/stock/', item.$key]">Edit</a>
       </ng-template>
     </data-table-column>
     </data-table>

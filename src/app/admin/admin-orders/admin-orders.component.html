@@ -1,5 +1,5 @@
 
-<div>
+<div class="container">
   <br>
 
 <h1>Admin Manages Orders</h1>
@@ -56,7 +56,7 @@
     [header]="'Bill'"
   >
   <ng-template #dataTableCell let-item="item">
-    <a [routerLink]="['/view/orders/', item.$key]">Genrate</a>
+    <a [routerLink]="['/dashboards/view/orders/', item.$key]">Genrate</a>
   </ng-template>
 </data-table-column>
 
@@ -65,7 +65,7 @@
     [header]="'Orders'"
   >
   <ng-template #dataTableCell let-item="item">
-    <a [routerLink]="['/admin/view/orders/details', item.$key]">View</a>
+    <a [routerLink]="['/dashboards/admin/view/orders/details/', item.$key]">View</a>
   </ng-template>
 </data-table-column>
 </data-table>

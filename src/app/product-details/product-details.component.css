@@ -2,7 +2,8 @@
 
 html {
   display: grid;
-  height: 600px
+  height: 100%;
+  padding-top: 50px;
 
 }
 
@@ -10,6 +11,7 @@ html {
 body {
 	display: grid;
 	background: #E0C9CB;
+	padding-top: 140px;
 	font-family: "Lato", sans-serif;
   text-transform: uppercase;
   
@@ -24,8 +26,8 @@ body {
 	height: 520px;
 	background: #F5F5F5;
 	box-shadow: 5px 5px 15px rgba(186,126,1, 0.5);
-  border-radius: 10px;
-  margin-top: -5%
+  	border-radius: 10px;
+  	margin-top: -5%
 }
 
 img {

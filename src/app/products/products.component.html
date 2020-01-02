@@ -1,22 +1,22 @@
 
-<div class="input-group mb-3">
-        <div class="input-group-prepend">
-                            
+<div class="input-group mb-3" class="top">
+        <div class="input-group-prepend">            
                 <product-filter [category]="category"></product-filter>
-            </div>
+            
      <input 
             [(ngModel)]="searchTerm"
             type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="{{ 'Product.Search' | translate }}">
             <br>
+        </div>
 
         <app-banner></app-banner>
 
-        <div class="container">
+        <div >
             <br>
             
                 <div class="row">
                     <ng-container *ngFor="let p of filteredProducts; let i = index">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-2 col-sm-6">
                             <product-card [product]="p" [shopping-cart]="cart"></product-card>
                         </div>
                     </ng-container>  
