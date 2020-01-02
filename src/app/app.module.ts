@@ -66,6 +66,8 @@ import { ReportDetailsComponent } from './report-details/report-details.componen
 import { ExcelService } from './excel.service';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AdminViewDetailsComponent } from './admin-view-details/admin-view-details.component';
+import { DefaultModule } from './layouts/default/default.module';
 
 
 export function createTranslateLoader(http: Http) {
@@ -112,6 +114,8 @@ export function createTranslateLoader(http: Http) {
     ReportDetailsComponent,
     OrderStatusComponent,
     EditProfileComponent,
+    AdminViewDetailsComponent,
+   
     
     
     
@@ -121,6 +125,7 @@ export function createTranslateLoader(http: Http) {
     BrowserAnimationsModule,
     CustomFormsModule,
     HttpModule,
+    DefaultModule,
     NavbarModule,
     DataTableModule,
     FormsModule,
@@ -174,25 +179,16 @@ export function createTranslateLoader(http: Http) {
 
 
 
-      { path: 'Customer/Details',
-        component: CustomerDetailsComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
+    
 
       { path: 'Dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuardService, AdminAuthGuardService] 
       },
 
-      { path: 'Stock',
-        component: StockComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
+     
 
-      { path: 'report',
-        component: ReportComponent,
-        canActivate: [AuthGuardService, AdminAuthGuardService] 
-      },
+     
 
       { path: 'report/:id',
         component: ReportDetailsComponent,
@@ -209,10 +205,7 @@ export function createTranslateLoader(http: Http) {
         component: AdminProductsComponent,
         canActivate: [AuthGuardService, AdminAuthGuardService] 
       },
-      { path: 'admin/orders',
-       component: AdminOrdersComponent, 
-       canActivate: [AuthGuardService, AdminAuthGuardService]
-       },
+     
        {
          path: 'footer',
          component: FooterComponent
@@ -227,7 +220,13 @@ export function createTranslateLoader(http: Http) {
        { path: 'view/orders/details/:id',
        component: ViewDetailsComponent, 
        canActivate: [AuthGuardService]
-       }
+       },
+       {
+         path: 'admin/view/orders/details/:id',
+         component: AdminViewDetailsComponent,
+         canActivate: [AuthGuardService]
+       },
+      
     ]),
     MatTableModule,
     MatPaginatorModule,
@@ -252,6 +251,7 @@ export function createTranslateLoader(http: Http) {
     StockService,
     ReportService,
     ExcelService,
+  
     { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
   ],
   bootstrap: [AppComponent]

@@ -18,6 +18,8 @@ export class BsNavbarComponent implements OnInit {
 
 public name: "abhay shau"
 
+showNav = false;
+
   private subscription: Subscription;
 
   appUser: AppUser;
@@ -33,6 +35,10 @@ public name: "abhay shau"
     ) {   
 
       this.language = this.cookie.get("language")
+
+      
+
+
 
 
       translate.addLangs(["en", "hi"]);

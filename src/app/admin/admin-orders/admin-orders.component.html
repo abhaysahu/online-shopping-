@@ -1,6 +1,5 @@
-<dashboard></dashboard>
 
-<div class="container">
+<div>
   <br>
 
 <h1>Admin Manages Orders</h1>
@@ -66,7 +65,7 @@
     [header]="'Orders'"
   >
   <ng-template #dataTableCell let-item="item">
-    <a [routerLink]="['/view/orders/details', item.$key]">View</a>
+    <a [routerLink]="['/admin/view/orders/details', item.$key]">View</a>
   </ng-template>
 </data-table-column>
 </data-table>
