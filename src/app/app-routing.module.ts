@@ -15,6 +15,7 @@ import { ViewDetailsComponent } from './view-details/view-details.component';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
 import { StockFormComponent } from './stock-form/stock-form.component';
+import { AddstockComponent } from './addstock/addstock.component';
 
 const routes: Routes = [{
   path: 'dashboards',component: DefaultComponent,
@@ -65,6 +66,9 @@ const routes: Routes = [{
 
   { 
     path: 'Stock',component: StockComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+  },
+  { 
+    path: 'add/Stock',component: AddstockComponent ,canActivate: [AuthGuardService, AdminAuthGuardService] 
   },
   { 
     path: 'admin/stock/new',component: StockFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 

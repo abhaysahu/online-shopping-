@@ -64,6 +64,7 @@ import { ExcelService } from './excel.service';
 import { OrderStatusComponent } from './order-status/order-status.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { DefaultModule } from './layouts/default/default.module';
+import { AddstockComponent } from './addstock/addstock.component';
 
 
 export function createTranslateLoader(http: Http) {
@@ -106,6 +107,7 @@ export function createTranslateLoader(http: Http) {
     ReportDetailsComponent,
     OrderStatusComponent,
     EditProfileComponent,
+    AddstockComponent,
    
     
     
@@ -133,7 +135,7 @@ export function createTranslateLoader(http: Http) {
       { path: 'products/details/:id', component: ProductDetailsComponent},
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
-      // { path: 'login/phone/number', component: PhoneComponent },
+      { path: 'login/phone/number', component: PhoneComponent },
       { path: 'ppp', component: PppComponent},
 
 
@@ -148,9 +150,13 @@ export function createTranslateLoader(http: Http) {
         path: 'order/status/:id',
         component: OrderStatusComponent,
       },
+      
+      {
+        path: 'view/orders/details/:id',component: ViewDetailsComponent,canActivate: [AuthGuardService]
+      },
 
      
-       { path: 'check-out/:id', component: CheckOutComponent, canActivate: [AuthGuardService , AdminAuthGuardService] },
+       { path: 'check-out/:id', component: CheckOutComponent, canActivate: [AuthGuardService] },
 
        
        

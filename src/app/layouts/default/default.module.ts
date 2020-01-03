@@ -14,6 +14,7 @@ import { DashboardsComponent } from 'src/app/modules/dashboards/dashboards.compo
   declarations: [
     DefaultComponent,
     DashboardsComponent,
+    
 
   ],
   imports: [
