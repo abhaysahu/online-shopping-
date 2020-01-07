@@ -92,16 +92,7 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
 
           if(item.product.code)
           {
-            console.log("yes")
-          }
-
-          else
-          {
-            console.log("no")
-          }
-
-
-              this.stockService.get(item.product.code).take(1).subscribe(stocks => {
+            this.stockService.get(item.product.code).take(1).subscribe(stocks => {
               this.stocks = stocks
 
               this.stocks.stock = this.stocks.stock - item.quantity
@@ -118,7 +109,17 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
               this.reportService.create(pusheditems,item.product.code);
 
             })
+          }
+
+          else
+          {
+            console.log("no")
+          }
+            
         }
+
+
+        console.log("abhay")
 
 
     let result = await this.orderService.placeOrder(order);

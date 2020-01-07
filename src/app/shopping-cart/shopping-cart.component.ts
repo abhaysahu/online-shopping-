@@ -15,7 +15,6 @@ export class ShoppingCartComponent implements OnInit {
 
 
   product:any={};
-  stock: any={};
   message;
   messageClass;
 
@@ -54,8 +53,28 @@ export class ShoppingCartComponent implements OnInit {
       product.keys = random;
       product.quantity = 1;
       product.price = 0;
+      product.title = null;
+      product.imageUrl=null;
+      product.code=null;
 
-      this.shoppingCartService.ManualAddToCart(product) 
+      this.shoppingCartService.ManualAddToCart(product).then(data=>{
+
+        if(data)
+        {
+          this.messageClass = 'alert alert-success';
+          this.message = "Stock Update Success fully";
+          product.name = "";
+          product.weight = "";
+        }
+        else
+        {
+          this.messageClass = 'alert alert-danger';
+          this.message = "Invalid"
+        }
+
+      })
+
+     
     
     }
 

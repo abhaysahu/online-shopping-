@@ -10,18 +10,32 @@ export class Order {
       
         this.items = shoppingCart.items.map(i => {
           //console.log(i);
+          if(i.code)
+          {
             return {
               product: {
                 title: i.title,
                 imageUrl: i.imageUrl,
                 price: i.price,
                 code: i.code,
+              },
+              quantity: i.quantity,
+              totalPrice: i.totalPrice
+            }
+          }
+
+          else
+          {
+            return {
+              product: {
+                price: i.price,
                 name: i.name,
                 weight: i.weight
               },
               quantity: i.quantity,
               totalPrice: i.totalPrice
             }
+          }
           })
     }
 }

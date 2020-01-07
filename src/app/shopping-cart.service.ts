@@ -44,6 +44,7 @@ export class ShoppingCartService {
   async ManualAddToCart(product: Product) {
 
     this.ManualupdateItem(product)
+    return true
 
   }
 
@@ -170,7 +171,5 @@ export class ShoppingCartService {
     let cartId = localStorage.getItem('cartId');
     return this.db.object(`/shopping-carts/${cartId}/items/${id}`).remove();
   }
-
-  
 
 }
