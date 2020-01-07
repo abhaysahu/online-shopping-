@@ -20,17 +20,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of cart.items">
-        <td>
+        <td *ngIf="item.code">
           <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail"></div>
         </td>    
-        <td>
+        <td *ngIf="item.code">
             <div *ngIf="show; else elseBlock">{{ item.title }}</div>
             <ng-template #elseBlock>{{ item.titleH }}</ng-template>
         </td>
-        <td>
+        <td *ngIf="item.code">
           <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
         </td>
-        <td class="text-right">
+        <td class="text-right" *ngIf="item.code">
             <div *ngIf="!item.offer; else elseBlock">
                 <p class="card-text">{{ (item.price) * item.quantity | currency: "&#8377;": true}} 
                 </p>
@@ -58,11 +58,12 @@
     <div class="top">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
     </div>
+
+    <div class="top">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+    </div>
 </div>
 </div>
-
-
-
 
 
 
@@ -79,10 +80,6 @@
       </div>
       <div class="modal-body">
 
-
-
-
-
         <div class="row">
           <div class="col-md-8">
             <form #f="ngForm" (ngSubmit)="save(f.value)">
@@ -96,33 +93,27 @@
         
         
                   <div class="form-group">
-                    <label for="code">Product Code</label>
-                    <input #code="ngModel" [(ngModel)]="product.code" name="code" id="code" type="text" class="form-control" required placeholder="Product Code">
-                    <div class="alert alert-danger" *ngIf="code.touched && code.invalid">
+                    <label for="name">Product Code</label>
+                    <input #name="ngModel" [(ngModel)]="product.name" name="name" id="name" type="text" class="form-control" required placeholder="Product Code">
+                    <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
                       Product Code is required.
                     </div>
                   </div>
                   
                     
                   <div class="form-group"> 
-                      <label for="stock">Stock</label>
+                      <label for="weight">Stock</label>
                       <div class="input-group-prepend">
-                        <input #stock="ngModel" [(ngModel)]="product.stock" name="stock" id="stock" type="number" min="-100000" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="35.00" required [min]="0">
+                        <input #weight="ngModel" [(ngModel)]="product.weight" name="weight" id="weight" class="form-control" placeholder="500 gm or 2 kg">
                       </div> 
-                      <div class="alert alert-danger" *ngIf="stock.touched && stock.invalid">
-                        <div *ngIf="stock.errors.required">Price is required.</div>
+                      <div class="alert alert-danger" *ngIf="weight.touched && weight.invalid">
+                        Weight is required.
                       </div>  
                     </div>
                     <button class="btn btn-primary">Save</button>
               </form>
           </div>
         </div>
-        
-        
-
-
-
-
 
       </div>
       <div class="modal-footer">
@@ -131,4 +122,54 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Manual Added Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" *ngIf="cart$ | async as cart">
+
+
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Weight</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cart.items; let i = index">
+              <th *ngIf="!item.code">{{i+1}}</th>
+              <td *ngIf="!item.code">{{item.name}}</td>
+              <td *ngIf="!item.code">{{item.weight}}</td>
+              <td *ngIf="!item.code"><button type="button" (click)="delete(item.code)" class="btn btn-danger">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 

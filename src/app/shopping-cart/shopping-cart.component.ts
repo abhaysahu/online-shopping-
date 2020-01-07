@@ -3,6 +3,7 @@ import { ShoppingCartService } from '../shopping-cart.service';
 import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
@@ -24,7 +25,7 @@ export class ShoppingCartComponent implements OnInit {
   cart$;
   browserLang = "";
   language = "";
-  
+
 
   constructor(
     private shoppingCartService: ShoppingCartService,
@@ -38,15 +39,22 @@ export class ShoppingCartComponent implements OnInit {
    
     this.language = this.cookie.get("language")
     console.log(this.language);
+   
   
     }
 
 
 
-
-
     save(product){
-      console.log(product)      
+
+      const random = Math.floor(Math.random() * (999999 - 100000)) + 100000;
+
+      product.keys = random;
+      product.quantity = 1;
+      product.price = 0;
+
+      this.shoppingCartService.ManualAddToCart(product) 
+    
     }
 
 

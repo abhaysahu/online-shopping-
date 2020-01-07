@@ -22,6 +22,7 @@ export class ProductCardComponent  {
 
   addToCart(){ //let cart = this.cartService.getOrCreateCart();
     this.cartService.addToCart(this.product);  
+    console.log(this.product)
   }
 }
  

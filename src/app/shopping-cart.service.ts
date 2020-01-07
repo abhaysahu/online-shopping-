@@ -37,6 +37,19 @@ export class ShoppingCartService {
   //     .map(x => new ShoppingCart(x.itemsorders));
   // }
 
+
+
+
+
+  async ManualAddToCart(product: Product) {
+
+    this.ManualupdateItem(product)
+
+  }
+
+
+
+
   async addToCart(product: Product) {
 
     this.productService.getBoth(product.$key).take(1).subscribe(products => {
@@ -122,6 +135,7 @@ export class ShoppingCartService {
   
 
   private async updateItem(product, change: number){
+    
     let cartId = await this.getOrCreateCartId();
     let item$ = this.getItem(cartId, product.$key);
     item$.take(1).subscribe(item => {
@@ -141,5 +155,21 @@ export class ShoppingCartService {
     });  
   }
 
+
+
+ 
+
+  private async ManualupdateItem(product){
+
+    let cartId = await this.getOrCreateCartId();
+    let key = product.keys
+
+    const toSend = this.db.object(`/shopping-carts/${cartId}/items/${key}`)
+    toSend.set(product);
+
+    
+    
+     
+  }
 
 }

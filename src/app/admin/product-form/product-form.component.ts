@@ -75,6 +75,7 @@ export class ProductFormComponent implements OnInit {
     else
     {
       this.nextAvailableKey = this.photoListStrem.push({}).key;
+      console.log(this.nextAvailableKey)
     }
 
     translate.onLangChange.subscribe(lang=>{
