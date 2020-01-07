@@ -60,7 +60,7 @@
     </div>
 
     <div class="top">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Manual Product</button>
     </div>
 </div>
 </div>
@@ -155,7 +155,7 @@
               <th *ngIf="!item.code">{{i+1}}</th>
               <td *ngIf="!item.code">{{item.name}}</td>
               <td *ngIf="!item.code">{{item.weight}}</td>
-              <td *ngIf="!item.code"><button type="button" (click)="delete(item.code)" class="btn btn-danger">Delete</button></td>
+              <td *ngIf="!item.code"><button type="button" (click)="delete(item.keys)" class="btn btn-danger">Delete</button></td>
             </tr>
           </tbody>
         </table>

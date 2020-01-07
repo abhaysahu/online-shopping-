@@ -48,8 +48,6 @@ export class ShoppingCartService {
   }
 
 
-
-
   async addToCart(product: Product) {
 
     this.productService.getBoth(product.$key).take(1).subscribe(products => {
@@ -156,9 +154,6 @@ export class ShoppingCartService {
   }
 
 
-
- 
-
   private async ManualupdateItem(product){
 
     let cartId = await this.getOrCreateCartId();
@@ -166,10 +161,16 @@ export class ShoppingCartService {
 
     const toSend = this.db.object(`/shopping-carts/${cartId}/items/${key}`)
     toSend.set(product);
-
-    
-    
-     
   }
+
+
+
+  delete(id)
+  {
+    let cartId = localStorage.getItem('cartId');
+    return this.db.object(`/shopping-carts/${cartId}/items/${id}`).remove();
+  }
+
+  
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from '../shopping-cart.service';
 import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class ShoppingCartComponent implements OnInit {
   constructor(
     private shoppingCartService: ShoppingCartService,
     private translate: TranslateService, 
-    private cookie: CookieService
+    private cookie: CookieService,
+    private router: Router,
     ) { 
 
       translate.onLangChange.subscribe(lang=>{
@@ -55,6 +57,19 @@ export class ShoppingCartComponent implements OnInit {
 
       this.shoppingCartService.ManualAddToCart(product) 
     
+    }
+
+
+    delete(id)
+    {
+        if(!confirm('Are you sure yow want to delete this Manual product?')) return;
+
+        console.log(id)
+        
+        this.shoppingCartService.delete(id);
+        
+        //this.router.navigate(['/check-out']);
+      
     }
 
 

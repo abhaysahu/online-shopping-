@@ -10,6 +10,7 @@ export class ShoppingCart {
 
       for (let productId in itemsMap) {
         let item = itemsMap[productId];
+        console.log(item)
           // title: item.title,
           // imageUrl: item.imageUrl,
           // price: item.price, 

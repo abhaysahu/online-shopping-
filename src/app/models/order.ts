@@ -9,12 +9,15 @@ export class Order {
         this.dataPlaced = new Date().getTime();
       
         this.items = shoppingCart.items.map(i => {
+          //console.log(i);
             return {
               product: {
                 title: i.title,
                 imageUrl: i.imageUrl,
                 price: i.price,
-                code: i.code
+                code: i.code,
+                name: i.name,
+                weight: i.weight
               },
               quantity: i.quantity,
               totalPrice: i.totalPrice

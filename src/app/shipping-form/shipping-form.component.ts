@@ -88,7 +88,17 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
         {
           let pusheditems = {};
 
-          console.log(item.product.price)
+          console.log(item)
+
+          if(item.product.code)
+          {
+            console.log("yes")
+          }
+
+          else
+          {
+            console.log("no")
+          }
 
 
               this.stockService.get(item.product.code).take(1).subscribe(stocks => {
