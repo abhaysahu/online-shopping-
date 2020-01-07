@@ -54,6 +54,81 @@
     *ngIf="cart.items.length"
     routerLink="/check-out" 
     class="btn btn-primary">{{ 'Shopping.CheckOut' | translate }}</a>
+
+    <div class="top">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+    </div>
+</div>
 </div>
 
+
+
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Stock Quantity</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      </div>
+      <div class="modal-body">
+
+
+
+
+
+        <div class="row">
+          <div class="col-md-8">
+            <form #f="ngForm" (ngSubmit)="save(f.value)">
+        
+        
+                <div class="row show-hide-message">
+                    <div [ngClass]="messageClass">
+                      {{ message }}
+                    </div>
+                  </div>
+        
+        
+                  <div class="form-group">
+                    <label for="code">Product Code</label>
+                    <input #code="ngModel" [(ngModel)]="product.code" name="code" id="code" type="text" class="form-control" required placeholder="Product Code">
+                    <div class="alert alert-danger" *ngIf="code.touched && code.invalid">
+                      Product Code is required.
+                    </div>
+                  </div>
+                  
+                    
+                  <div class="form-group"> 
+                      <label for="stock">Stock</label>
+                      <div class="input-group-prepend">
+                        <input #stock="ngModel" [(ngModel)]="product.stock" name="stock" id="stock" type="number" min="-100000" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="35.00" required [min]="0">
+                      </div> 
+                      <div class="alert alert-danger" *ngIf="stock.touched && stock.invalid">
+                        <div *ngIf="stock.errors.required">Price is required.</div>
+                      </div>  
+                    </div>
+                    <button class="btn btn-primary">Save</button>
+              </form>
+          </div>
+        </div>
+        
+        
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">okk</button>
+      </div>
+    </div>
+  </div>
 </div>
+

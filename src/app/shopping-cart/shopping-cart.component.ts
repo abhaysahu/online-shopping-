@@ -11,6 +11,13 @@ import { CookieService } from 'ngx-cookie-service';
 export class ShoppingCartComponent implements OnInit {
 
 
+
+  product:any={};
+  stock: any={};
+  message;
+  messageClass;
+
+
   show: boolean = true;
   
   
@@ -33,6 +40,18 @@ export class ShoppingCartComponent implements OnInit {
     console.log(this.language);
   
     }
+
+
+
+
+
+    save(product){
+      console.log(product)      
+    }
+
+
+
+
 
   async ngOnInit() {
 

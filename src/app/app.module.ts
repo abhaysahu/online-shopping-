@@ -151,6 +151,10 @@ export function createTranslateLoader(http: Http) {
         component: OrderStatusComponent,
       },
       
+      { 
+        path: 'add/Stock',component: AddstockComponent ,canActivate: [AuthGuardService, AdminAuthGuardService] 
+      },
+      
       {
         path: 'view/orders/details/:id',component: ViewDetailsComponent,canActivate: [AuthGuardService]
       },
