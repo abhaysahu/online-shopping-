@@ -15,4 +15,10 @@
 
 .top {
     padding-left: 20px;
+   
+}
+
+.line {
+     display:inline-flex;
+
 }

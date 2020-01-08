@@ -40,6 +40,22 @@ export class OrderService {
 
   }
 
+  updateRate(product,orderId)
+  {
+    console.log(product)
+    console.log(orderId)
+    this.db.object('/orders/' + orderId + '/items/' + product.code + '/product/').update({
+      
+      price: product.price
+    });
+
+    return this.db.object('/orders/' + orderId + '/items/' + product.code).update({
+      
+      totalPrice: product.price
+    });
+
+  }
+
 
   getOrdersByUser(userId: string){
     return this.db.list('/orders', {

@@ -33,9 +33,9 @@ const routes: Routes = [{
   { 
     path: 'view/orders/:id',component: ViewOrderComponent, canActivate: [AuthGuardService, AdminAuthGuardService]
   },
-  {
-    path: 'order/status/:id',component: OrderStatusComponent,canActivate: [AuthGuardService, AdminAuthGuardService]
-  },
+  // {
+  //   path: 'order/status/:id',component: OrderStatusComponent,canActivate: [AuthGuardService, AdminAuthGuardService]
+  // },
 
 
 

@@ -53,9 +53,7 @@ export class ShoppingCartComponent implements OnInit {
       product.keys = random;
       product.quantity = 1;
       product.price = 0;
-      product.title = null;
-      product.imageUrl=null;
-      product.code=null;
+      
 
       this.shoppingCartService.ManualAddToCart(product).then(data=>{
 

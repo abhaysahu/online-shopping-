@@ -3,6 +3,8 @@ import { OrderCart } from '../models/order-cart';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { OrderService } from '../order.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AppUser } from '../models/app-user';
+import { AuthService } from '../auth.service';
 
 
 
@@ -16,17 +18,26 @@ export class ViewDetailsComponent implements OnInit {
 
   @Input('cart') cart: OrderCart;
 
+
+  product:any={};
+  stock: any={};
+  message;
+  messageClass;
+
   orders: any[];
   order$;
   SumOfQuantity=0;
   SumOfPrice=0;
   orderId;
+  appUser: AppUser;
 
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private db: AngularFireDatabase,
+    private auth: AuthService, 
+
     private orderService: OrderService,) { 
 
       this.orderId = route.snapshot.paramMap.get('id');
@@ -47,7 +58,44 @@ export class ViewDetailsComponent implements OnInit {
       })    
     }
 
+
+    save(product){
+
+      console.log(product)
+
+      this.orderService.updateRate(product,this.orderId).then(data=>{
+        console.log(data)
+      })
+      
+
+      // this.shoppingCartService.ManualAddToCart(product).then(data=>{
+
+      //   if(data)
+      //   {
+      //     this.messageClass = 'alert alert-success';
+      //     this.message = "Stock Update Success fully";
+      //     product.name = "";
+      //     product.weight = "";
+      //   }
+      //   else
+      //   {
+      //     this.messageClass = 'alert alert-danger';
+      //     this.message = "Invalid"
+      //   }
+
+      // })
+
+     
+    
+    }
+
   ngOnInit() {
+
+    this.auth.appUser$.subscribe(appUser => {
+      this.appUser = appUser
+      console.log(this.appUser)
+
+    });
   }
 
 }

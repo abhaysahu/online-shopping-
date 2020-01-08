@@ -18,7 +18,7 @@ export class OrderStatusComponent implements OnInit {
   orders: any = {};
   order$;
   categories$;
-  categories: any = {}
+  categories: any = {} 
   appUser: AppUser;
   product:any={};
 

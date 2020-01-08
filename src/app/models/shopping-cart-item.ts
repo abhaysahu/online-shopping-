@@ -7,7 +7,6 @@ export class ShoppingCartItem {
     price: number; 
     code: string;
     quantity: number;
-    name: string;
     weight: string;
 
 

@@ -29,7 +29,7 @@ export class Order {
             return {
               product: {
                 price: i.price,
-                name: i.name,
+                title: i.title,
                 weight: i.weight
               },
               quantity: i.quantity,
