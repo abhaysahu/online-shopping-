@@ -114,8 +114,8 @@ import { SharesModule } from './shares/shares.module';
       { path: 'products/details/:id', component: ProductDetailsComponent},
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'login/phone/number', component: PhoneComponent },
-      { path: 'ppp', component: PppComponent},
+     // { path: 'login/phone/number', component: PhoneComponent },
+      //{ path: 'ppp', component: PppComponent},
 
 
       { path: 'check-out', component: CheckOutComponent, canActivate: [AuthGuardService] },

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs';
 import { DataTableResource } from 'angular5-data-table';
-import { Product } from '../models/product';
+import { Product } from '../shares/models/product';
 import { ProductService } from '../shares/services/product.service';
 import { StockService } from '../shares/services/stock.service';
 import { ExcelService } from '../shares/services/excel.service';

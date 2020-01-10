@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from '../shares/services/product.service';
 import { CategoryService } from '../shares/services/category.service';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../models/product';
+import { Product } from '../shares/models/product';
 import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { Subscription } from 'rxjs'; 
 import { TranslateService, LangChangeEvent } from 'ng2-translate';

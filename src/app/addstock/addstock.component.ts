@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-addstock',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddstockComponent implements OnInit {
 
-  constructor() {
+  constructor(private db: AngularFireDatabase) {
+    this.db.list('/orders').subscribe(data=>{
+      console.log(data)
+    })
     console.log("abhay sahu")
    }
 

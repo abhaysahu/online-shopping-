@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrderService } from 'src/app/shares/services/order.service';
 import { Subscription } from 'rxjs';
-import { Order } from 'src/app/models/order';
+import { Order } from 'src/app/shares/models/order';
 import { DataTableResource } from 'angular5-data-table';
 
 

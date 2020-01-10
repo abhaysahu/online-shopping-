@@ -3,7 +3,7 @@ import { OrderService } from '../shares/services/order.service';
 import { AngularFireDatabase } from 'angularfire2/database/database';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../shares/services/auth.service';
-import { AppUser } from '../models/app-user';
+import { AppUser } from '../shares/models/app-user';
 import { CategoryService } from '../shares/services/category.service';
 import { FormGroup, FormControl } from '@angular/forms';
 

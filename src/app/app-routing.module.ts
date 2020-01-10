@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 
-import { DashboardsComponent } from './modules/dashboards/dashboards.component';
+import { DashboardsComponent } from './layouts/modules/dashboards/dashboards.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AuthGuardService } from './shares/services/auth-guard.service';
 import { AdminAuthGuardService } from './shares/services/admin-auth-guard.service';
@@ -19,6 +19,7 @@ import { AddstockComponent } from './addstock/addstock.component';
 import { OrderStatusComponent } from './order-status/order-status.component';
 
 const routes: Routes = [{
+  
   path: 'dashboards',component: DefaultComponent,
   children: [{
     path:'', component: DashboardsComponent
@@ -70,12 +71,7 @@ const routes: Routes = [{
 
   { 
     path: 'Stock',component: StockComponent,canActivate: [AuthGuardService, AdminAuthGuardService],
-    children :[ 
-
-      { 
-        path: 'add/Stock',component: AddstockComponent ,canActivate: [AuthGuardService, AdminAuthGuardService] 
-      }
-    ] 
+    
   },
   
   { 

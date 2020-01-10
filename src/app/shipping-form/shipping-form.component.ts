@@ -3,8 +3,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 import { AuthService } from '../shares/services/auth.service';
 import { OrderService } from '../shares/services/order.service';
-import { Order } from '../models/order';
-import { ShoppingCart } from '../models/shopping-cart';
+import { Order } from '../shares/models/order';
+import { ShoppingCart } from '../shares/models/shopping-cart';
 import { ReportService } from '../shares/services/report.service';
 import { StockService } from '../shares/services/stock.service';
 
