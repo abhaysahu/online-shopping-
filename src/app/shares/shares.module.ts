@@ -42,7 +42,7 @@ export function createTranslateLoader(http: Http) {
   declarations: [
     ProductCardComponent,
     ProductQuantityComponent,
-    OrderStatusComponent,
+    
   ],
 
   imports: [
@@ -71,7 +71,6 @@ export function createTranslateLoader(http: Http) {
   exports: [
     ProductCardComponent,
     ProductQuantityComponent,
-    OrderStatusComponent,
     CommonModule,
     FormsModule,
     CustomFormsModule,

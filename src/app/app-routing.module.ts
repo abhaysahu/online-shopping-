@@ -21,75 +21,76 @@ const routes: Routes = [
   
   {
     // loadChildren: './admin-orders/admin-orders.module#AdminOrdersModule'
-    path: 'dashboards',component: DefaultComponent,
+    path: 'dashboards',
     loadChildren:'./layouts/default/default.module#DefaultModule'
   },
   
-  { 
-  path: 'dashboards',component: DefaultComponent,
-  children: [{
-    path:'', component: DashboardsComponent 
-  }, 
+//   { 
+//   path: 'dashboards',component: DefaultComponent,
+//   children: [{
+//     path:'', component: DashboardsComponent 
+//   }, 
     
-  { 
-    path: 'admin/orders',component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService],
-  },
-  {
-    path: 'admin/view/orders/details/:id',component: ViewDetailsComponent,canActivate: [AuthGuardService,AdminAuthGuardService]
-  },
-  { 
-    path: 'view/orders/:id',component: ViewOrderComponent, canActivate: [AuthGuardService, AdminAuthGuardService]
-  },
-  // {
-  //   path: 'order/status/:id',component: OrderStatusComponent,canActivate: [AuthGuardService, AdminAuthGuardService]
-  // },
+//   { 
+//     path: 'admin/orders',component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService],
+//   },
+//   {
+//     path: 'admin/view/orders/details/:id',component: ViewDetailsComponent,canActivate: [AuthGuardService,AdminAuthGuardService]
+//   },
+//   { 
+//     path: 'view/orders/:id',component: ViewOrderComponent, canActivate: [AuthGuardService, AdminAuthGuardService]
+//   },
+//   // {
+//   //   path: 'order/status/:id',component: OrderStatusComponent,canActivate: [AuthGuardService, AdminAuthGuardService]
+//   // },
 
 
  
 
-  { 
-    path: 'admin/products',component: AdminProductsComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
-  { 
-    path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
-  { 
-    path: 'admin/products/:id',component: ProductFormComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
+//   { 
+//     path: 'admin/products',component: AdminProductsComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
+//   { 
+//     path: 'admin/products/new', component: ProductFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
+//   { 
+//     path: 'admin/products/:id',component: ProductFormComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
  
 
 
 
-  { 
-    path: 'Customer/Details',component: CustomerDetailsComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
+//   { 
+//     path: 'Customer/Details',component: CustomerDetailsComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
 
 
 
-  { 
-    path: 'report',component: ReportComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
-  { 
-    path: 'report/:id',component: ReportDetailsComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
+//   { 
+//     path: 'report',component: ReportComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
+//   { 
+//     path: 'report/:id',component: ReportDetailsComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
 
 
 
-  { 
-    path: 'Stock',component: StockComponent,canActivate: [AuthGuardService, AdminAuthGuardService],
+//   { 
+//     path: 'Stock',component: StockComponent,canActivate: [AuthGuardService, AdminAuthGuardService],
     
-  },
+//   },
   
-  { 
-    path: 'admin/stock/new',component: StockFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
-  }, 
-  { 
-    path: 'admin/stock/:id',component: StockFormComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
-  },
+//   { 
+//     path: 'admin/stock/new',component: StockFormComponent, canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   }, 
+//   { 
+//     path: 'admin/stock/:id',component: StockFormComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
+//   },
 
 
-]
-}];
+// ]
+// }
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule,

@@ -61,37 +61,21 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent,
     ProductFilterComponent,
-    AddstockComponent,
-   
-
-    ShoppingCartSummaryComponent,
-    ShippingFormComponent,
-    ViewOrderComponent,
-    PhoneComponent,
     WelcomeComponent,
     FooterComponent,
     ProductDetailsComponent,
-    PppComponent,
-    ViewDetailsComponent,
+    
+    ShoppingCartSummaryComponent,
+    OrdersStatusComponent,
+    ShippingFormComponent,
     BannerComponent,
-    CustomerDetailsComponent,
-    StockComponent,
-    StockFormComponent,
-    ReportComponent,
-    ReportDetailsComponent,
-   
     EditProfileComponent,
     UserOrderDetailsComponent,
-    OrdersStatusComponent,
-  
-   
+
     
-    
+        
     
   ],
   imports: [
@@ -99,7 +83,7 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
     BrowserAnimationsModule,
     HttpModule,
 
-    DefaultModule,
+    //DefaultModule,
     SharesModule,
 
     NavbarModule,
@@ -115,7 +99,7 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
       { path: 'products/details/:id', component: ProductDetailsComponent},
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
-       {path: 'add', component: AddstockComponent},
+      // {path: 'add', component: AddstockComponent},
      
 
 
