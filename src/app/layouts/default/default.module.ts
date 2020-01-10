@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/layouts/modules/dashboard.service';
 import { DashboardsComponent } from 'src/app/layouts/modules/dashboards/dashboards.component';
 import { ShardModule } from '../shard/shard/shard.module';
+import { DefaultRoutingModule } from './default-routing.module';
 
 @NgModule({
   
@@ -27,7 +28,8 @@ import { ShardModule } from '../shard/shard/shard.module';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    DefaultRoutingModule
   ],
   providers: [
     DashboardService

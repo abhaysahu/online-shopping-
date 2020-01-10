@@ -3,28 +3,34 @@ import { Routes, RouterModule } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 
 import { DashboardsComponent } from './layouts/modules/dashboards/dashboards.component';
-import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminOrdersComponent } from './layouts/modules/admin-orders/admin-orders.component';
 import { AuthGuardService } from './shares/services/auth-guard.service';
 import { AdminAuthGuardService } from './shares/services/admin-auth-guard.service';
-import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component';
-import { ReportComponent } from './report/report.component';
-import { StockComponent } from './stock/stock.component';
-import { ViewOrderComponent } from './view-order/view-order.component';
-import { ViewDetailsComponent } from './view-details/view-details.component';
-import { ProductFormComponent } from './admin/product-form/product-form.component';
-import { ReportDetailsComponent } from './report-details/report-details.component';
-import { StockFormComponent } from './stock-form/stock-form.component';
-import { AddstockComponent } from './addstock/addstock.component';
-import { OrderStatusComponent } from './order-status/order-status.component';
+import { AdminProductsComponent } from './layouts/modules/admin-products/admin-products.component';
+import { CustomerDetailsComponent } from './layouts/modules/customer-details/customer-details.component';
+import { ReportComponent } from './layouts/modules/report/report.component';
+import { StockComponent } from './layouts/modules/stock/stock.component';
+import { ViewOrderComponent } from './layouts/modules/admin-orders/view-order/view-order.component';
+import { ViewDetailsComponent } from './layouts/modules/admin-orders/view-details/view-details.component';
+import { ProductFormComponent } from './layouts/modules/admin-products/product-form/product-form.component';
+import { ReportDetailsComponent } from './layouts/modules/report/report-details/report-details.component';
+import { StockFormComponent } from './layouts/modules/stock/stock-form/stock-form.component';
+import { DefaultModule } from './layouts/default/default.module';
 
-const routes: Routes = [{
+const routes: Routes = [
   
+  {
+    // loadChildren: './admin-orders/admin-orders.module#AdminOrdersModule'
+    path: 'dashboards',component: DefaultComponent,
+    loadChildren:'./layouts/default/default.module#DefaultModule'
+  },
+  
+  { 
   path: 'dashboards',component: DefaultComponent,
   children: [{
-    path:'', component: DashboardsComponent
-  },
- 
+    path:'', component: DashboardsComponent 
+  }, 
+    
   { 
     path: 'admin/orders',component: AdminOrdersComponent, canActivate: [AuthGuardService, AdminAuthGuardService],
   },
@@ -86,6 +92,7 @@ const routes: Routes = [{
 }];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule,
+    ]
 })
 export class AppRoutingModule { }

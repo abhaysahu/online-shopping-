@@ -1,0 +1,152 @@
+<div class="top"> 
+  <h1>
+    {{ 'Shopping.Order' | translate }}
+  </h1>
+  
+  <div *ngIf="order$ | async as order">
+  
+  <table class="table"> 
+      <thead>
+        <tr>
+          <th></th>
+          <th>{{ 'Shopping.Product' | translate }}</th>
+          <th class="text-center">{{ 'Shopping.Quantity' | translate }}</th>
+          <th class="text-center" >{{ 'Shopping.Price' | translate }}</th>
+          <th class="text-center" >{{ 'Shopping.Total' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of order.items">
+          <td *ngIf="item.product.price!=0">
+            <div [style.backgroundImage]="'url(' + item.product.imageUrl + ')'" class="thumbnail"></div>
+          </td>    
+          <td *ngIf="item.product.price!=0">
+            {{ item.product.title }}
+          </td>
+          <td class="text-center" *ngIf="item.product.price!=0">
+            {{item.quantity}}
+          </td>
+          <td class="text-center" *ngIf="item.product.price!=0">
+              {{ item.product.price | currency: "&#8377;" : true }}
+            </td>
+          <td class="text-center" *ngIf="item.product.price!=0">
+            {{ item.totalPrice | currency: "&#8377;" : true }}
+          </td>
+        </tr>  
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th class="text-center">{{ this.SumOfQuantity }}</th>
+          <th></th>
+          <th class="text-center">{{ this.SumOfPrice | currency: "&#8377;": true }}</th>
+        </tr>
+      </tfoot>
+    </table>
+   
+    <div class="line">
+      
+        <div class="tops">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Manual Product</button>
+        </div>
+  
+        <div class="tops">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg1">Order Status</button>
+        </div>
+  
+        <!-- <div class="tops">
+          <a  [routerLink]="['/order/status/', order.$key]" class="btn btn-primary">Order Status</a> 
+        </div> -->
+  
+    </div>
+  
+  </div>
+  
+  </div>
+  
+      
+  
+  
+  
+  
+  
+  
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Manual Added Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngIf="order$ | async as order">
+  
+  
+  
+          <table class="table" *ngIf="appUser; else anonymousUser">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Weight</th>
+                <th scope="col" *ngIf="appUser.isAdmin">Edit</th>
+              </tr>
+            </thead> 
+            <tbody>
+              <tr *ngFor="let item of order.items; let i = index">
+                <th *ngIf="!item.product.code">{{i}}</th>
+                <td *ngIf="!item.product.code">{{item.product.title}}</td>
+                <td *ngIf="!item.product.code">{{item.product.weight}}</td>
+                <td *ngIf="!item.product.code">
+  
+                  <div>    
+                    <ng-container *ngIf="appUser.isAdmin">
+                      <div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg2">Edit</button>
+                      </div>                  
+                    </ng-container>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="modal fade bd-example-modal-lg1" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="myLargeModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel1">Order Status</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <app-orders-status></app-orders-status>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  

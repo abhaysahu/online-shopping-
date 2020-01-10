@@ -1,0 +1,54 @@
+<h1>
+  Order Status 
+</h1>
+
+<div *ngIf="order$ | async as order">
+
+<table class="table"> 
+   <thead>
+     <tr>
+       <th>Order Status</th>
+       <th>Date</th>
+       <th>Time</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngIf="order.order.order.status">
+       <td>{{ order.order.order.name }} </td>
+       <td>{{ order.order.order.dataCreated | date }}</td>
+       <td>{{ order.order.order.dataCreated | date : 'HH:mm:ss' }}</td>
+     </tr>
+     
+     <tr *ngIf="order.order.leave.status">
+       <td>{{ order.order.leave.name }}</td>  
+       <td>{{ order.order.leave.dataCreated | date  }}</td>  
+       <td>{{ order.order.leave.dataCreated | date : 'HH:mm:ss' }}</td> 
+     </tr>
+
+     <tr *ngIf="order.order.process.status">
+       <td>{{ order.order.process.name }}</td>  
+       <td>{{ order.order.process.dataCreated | date  }}</td>  
+       <td>{{ order.order.process.dataCreated | date : 'HH:mm:ss' }}</td>  
+     </tr>
+
+     <tr *ngIf="order.order.city.status">
+       <td>{{ order.order.city.name }}</td>    
+       <td>{{ order.order.city.dataCreated | date }}</td>
+       <td>{{ order.order.city.dataCreated | date : 'HH:mm:ss' }}</td>
+     </tr>
+
+     <tr *ngIf="order.order.delivery.status">
+       <td>{{ order.order.delivery.name }}</td>   
+       <td>{{ order.order.delivery.dataCreated | date  }}</td> 
+       <td>{{ order.order.delivery.dataCreated | date : 'HH:mm:ss' }}</td>
+     </tr>
+
+     <tr *ngIf="order.order.receive.status">
+       <td>{{ order.order.receive.name }}</td>
+       <td>{{ order.order.receive.dataCreated | date  }}</td> 
+       <td>{{ order.order.receive.dataCreated | date : 'HH:mm:ss' }}</td>     
+     </tr>
+   </tbody>
+ </table>
+
+</div>

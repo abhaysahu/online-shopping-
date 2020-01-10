@@ -1,0 +1,84 @@
+
+<div class="top">
+
+  <h1>Report</h1>
+
+  <br>
+
+  <p>
+      <input
+        #query 
+        (keyup)="filter(query.value)"
+        type="text" class="form-control" placeholder="{{ 'Product.Admin-Search' | translate }}">
+  </p>
+    
+    
+    <data-table
+      [items]="items"
+      [itemCount]="itemCount"
+      (reload)="reloadItems($event)"
+    >
+
+
+    <data-table-column
+        [property]="'code'"
+        [header]="'Code'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+      </data-table-column>
+     
+      <data-table-column
+        [property]="'name'"
+        [header]="'Name'"
+        [sortable]="true"
+        [resizable]="true"
+      >
+
+      </data-table-column>
+    
+      <data-table-column
+        [property]="'price'"
+        [header]="'Price'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.price | currency:"&#8377;": true }}
+      </ng-template>
+      </data-table-column> 
+
+
+      
+      <data-table-column
+        [property]="'stock'"
+        [header]="'Stock'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.stock }}
+      </ng-template>
+      </data-table-column>
+
+      <data-table-column
+        [property]="'total'"
+        [header]="'Total'"
+        [sortable]="true" 
+        [resizable]="true"
+      >
+      <ng-template #dataTableCell let-item="item">
+        {{ item.stock * item.price }}
+      </ng-template>
+      </data-table-column>
+     
+      <data-table-column
+        [property]="'$key'"
+      >
+      <ng-template #dataTableCell let-item="item">
+          <a [routerLink]="['/dashboards/report/', item.$key]">View</a>
+      </ng-template>
+    </data-table-column>
+    </data-table>
+</div>
+

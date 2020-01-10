@@ -21,7 +21,7 @@ import { Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { ProductDetailsComponent } from '../products/product-details/product-details.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
@@ -29,6 +29,7 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
 import { DataTableModule } from 'angular5-data-table';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { OrderStatusComponent } from '../layouts/modules/admin-orders/order-status/order-status.component';
 
 
 
@@ -40,7 +41,8 @@ export function createTranslateLoader(http: Http) {
 @NgModule({
   declarations: [
     ProductCardComponent,
-    ProductQuantityComponent
+    ProductQuantityComponent,
+    OrderStatusComponent,
   ],
 
   imports: [
@@ -69,6 +71,7 @@ export function createTranslateLoader(http: Http) {
   exports: [
     ProductCardComponent,
     ProductQuantityComponent,
+    OrderStatusComponent,
     CommonModule,
     FormsModule,
     CustomFormsModule,
