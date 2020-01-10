@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WindowService } from '../window.service';
+import { WindowService } from '../shares/services/window.service';
 import * as firebase from 'firebase';
 
 export class PhoneNumber {

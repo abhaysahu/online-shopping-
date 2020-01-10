@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { OrderService } from '../order.service';
-import { ReportService } from '../report.service';
+import { OrderService } from '../shares/services/order.service';
+import { ReportService } from '../shares/services/report.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { async } from 'q';
 import { AsyncPipe } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { StockService } from '../stock.service';
+import { StockService } from '../shares/services/stock.service';
 
 
 

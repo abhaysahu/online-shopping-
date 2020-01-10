@@ -4,8 +4,8 @@ import { DefaultComponent } from './layouts/default/default.component';
 
 import { DashboardsComponent } from './modules/dashboards/dashboards.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-import { AuthGuardService } from './auth-guard.service';
-import { AdminAuthGuardService } from './admin-auth-guard.service';
+import { AuthGuardService } from './shares/services/auth-guard.service';
+import { AdminAuthGuardService } from './shares/services/admin-auth-guard.service';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { ReportComponent } from './report/report.component';
@@ -38,7 +38,7 @@ const routes: Routes = [{
   // },
 
 
-
+ 
 
   { 
     path: 'admin/products',component: AdminProductsComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
@@ -49,7 +49,7 @@ const routes: Routes = [{
   { 
     path: 'admin/products/:id',component: ProductFormComponent,canActivate: [AuthGuardService, AdminAuthGuardService] 
   },
-
+ 
 
 
 

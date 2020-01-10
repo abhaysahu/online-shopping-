@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OrderCart } from '../models/order-cart';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { OrderService } from '../order.service';
+import { OrderService } from '../shares/services/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppUser } from '../models/app-user';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../shares/services/auth.service';
 
 
 

@@ -3,9 +3,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs';
 import { DataTableResource } from 'angular5-data-table';
 import { Product } from '../models/product';
-import { ProductService } from '../product.service';
-import { StockService } from '../stock.service';
-import { ExcelService } from '../excel.service';
+import { ProductService } from '../shares/services/product.service';
+import { StockService } from '../shares/services/stock.service';
+import { ExcelService } from '../shares/services/excel.service';
 
 
 declare const $;

@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from '../product.service';
-import { CategoryService } from '../category.service';
+import { ProductService } from '../shares/services/product.service';
+import { CategoryService } from '../shares/services/category.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
-import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { Subscription } from 'rxjs'; 
 import { TranslateService, LangChangeEvent } from 'ng2-translate';
-import { LanguageService } from '../language.service';
+import { LanguageService } from '../shares/services/language.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({

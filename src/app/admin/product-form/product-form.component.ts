@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from 'src/app/category.service';
-import { ProductService } from 'src/app/product.service';
+import { CategoryService } from 'src/app/shares/services/category.service';
+import { ProductService } from 'src/app/shares/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/take';
 import { TranslateService, LangChangeEvent } from 'ng2-translate';

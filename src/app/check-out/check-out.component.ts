@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { ShoppingCart } from '../models/shopping-cart';
 import { Subscription, Observable } from 'rxjs';
 import { TranslateService, LangChangeEvent } from 'ng2-translate';

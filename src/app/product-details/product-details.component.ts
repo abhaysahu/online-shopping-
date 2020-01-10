@@ -1,11 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../product.service';
+import { ProductService } from '../shares/services/product.service';
 import { Product } from '../models/product';
-import { ShoppingCartService } from '../shopping-cart.service';
+import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { ShoppingCart } from '../models/shopping-cart';
-import { LanguageService } from '../language.service';
+import { LanguageService } from '../shares/services/language.service';
 import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
 

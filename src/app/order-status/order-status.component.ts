@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../order.service';
+import { OrderService } from '../shares/services/order.service';
 import { AngularFireDatabase } from 'angularfire2/database/database';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../shares/services/auth.service';
 import { AppUser } from '../models/app-user';
-import { CategoryService } from '../category.service';
+import { CategoryService } from '../shares/services/category.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({

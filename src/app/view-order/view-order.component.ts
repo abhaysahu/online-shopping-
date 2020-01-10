@@ -1,7 +1,7 @@
 import { Component, Input, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { AuthService } from '../auth.service';
-import { OrderService } from '../order.service';
+import { AuthService } from '../shares/services/auth.service';
+import { OrderService } from '../shares/services/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderCart } from '../models/order-cart';
 import { Order } from '../models/order';

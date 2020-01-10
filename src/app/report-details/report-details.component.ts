@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ReportService } from '../report.service';
+import { ReportService } from '../shares/services/report.service';
 import { Product } from '../models/product';
 import { DataTableResource } from 'angular5-data-table';
 import { Subscription } from 'rxjs';
-import { StockService } from '../stock.service';
+import { StockService } from '../shares/services/stock.service';
 
 @Component({
   selector: 'app-report-details',

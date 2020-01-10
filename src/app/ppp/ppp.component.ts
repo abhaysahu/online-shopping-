@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { StockService } from '../stock.service';
+import { StockService } from '../shares/services/stock.service';
 
 @Component({
   selector: 'ppp',

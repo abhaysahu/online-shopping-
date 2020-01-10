@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { StockService } from '../stock.service';
+import { StockService } from '../shares/services/stock.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { Subscription } from 'rxjs';
-import { CategoryService } from '../category.service';
+import { CategoryService } from '../shares/services/category.service';
 
 
 import * as firebase from 'firebase';

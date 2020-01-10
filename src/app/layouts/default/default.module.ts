@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 
 import { RouterModule } from '@angular/router';
-import { ShardModule } from 'src/app/shard/shard/shard.module';
 import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import { DashboardsComponent } from 'src/app/modules/dashboards/dashboards.component';
+import { ShardModule } from '../shard/shard/shard.module';
 
 @NgModule({
   

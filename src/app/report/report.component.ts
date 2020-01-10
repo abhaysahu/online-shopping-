@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { DataTableResource } from 'angular5-data-table';
-import { StockService } from '../stock.service';
+import { StockService } from '../shares/services/stock.service';
 import { Subscription } from 'rxjs';
 
 @Component({
