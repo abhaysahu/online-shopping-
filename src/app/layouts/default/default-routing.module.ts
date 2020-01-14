@@ -18,7 +18,7 @@ import { StockFormComponent } from '../modules/stock/stock-form/stock-form.compo
 
 
 
-const routes: Routes = [
+const routes: Routes = [ 
   
   { 
   path: '',component: DefaultComponent,canActivate: [AuthGuardService, AdminAuthGuardService],

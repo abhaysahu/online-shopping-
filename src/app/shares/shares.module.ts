@@ -30,6 +30,7 @@ import { DataTableModule } from 'angular5-data-table';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { OrderStatusComponent } from '../layouts/modules/admin-orders/order-status/order-status.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -47,6 +48,7 @@ export function createTranslateLoader(http: Http) {
 
   imports: [
     CommonModule,
+    HttpClientModule,
     SharesRoutingModule,
     FormsModule,
     CustomFormsModule,
@@ -59,8 +61,10 @@ export function createTranslateLoader(http: Http) {
     
     RouterModule.forChild([
       
-     ]),
+]),
+
     NgbModule.forRoot(),
+
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),

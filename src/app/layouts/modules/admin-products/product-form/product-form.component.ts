@@ -109,7 +109,7 @@ export class ProductFormComponent implements OnInit {
       
     }
 
-    this.router.navigate(['/admin/products']);
+    this.router.navigate(['/dashboards/admin/products']);
   }
 
   delete()
@@ -119,7 +119,7 @@ export class ProductFormComponent implements OnInit {
       this.productService.deleteBoth(this.id);
       const storageRef: firebase.storage.Reference = firebase.storage().ref(`/photos/list/${this.nextAvailableKey}`); 
       storageRef.delete()
-      this.router.navigate(['/admin/products']);
+      this.router.navigate(['/dashboards/admin/products']);
     
   }
 

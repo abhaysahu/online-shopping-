@@ -25,6 +25,7 @@ import { AddstockComponent } from 'src/app/addstock/addstock.component';
 import { PhoneComponent } from 'src/app/phone/phone.component';
 import { SharesModule } from 'src/app/shares/shares.module';
 
+
 @NgModule({
   
   declarations: [
@@ -60,7 +61,7 @@ import { SharesModule } from 'src/app/shares/shares.module';
     CommonModule,
     RouterModule,
     ShardModule,
-    
+    SharesModule,
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
@@ -69,7 +70,7 @@ import { SharesModule } from 'src/app/shares/shares.module';
     MatTableModule,
     MatDialogModule,
     DefaultRoutingModule,
-    SharesModule
+    //SharesModule
   ],
   providers: [
     DashboardService

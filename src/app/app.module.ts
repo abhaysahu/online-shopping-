@@ -27,12 +27,12 @@ import { ViewOrderComponent } from './layouts/modules/admin-orders/view-order/vi
 import { ParticlesModule } from 'angular-particle';
 import { PhoneComponent } from './phone/phone.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './products/footer/footer.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { PppComponent } from './layouts/modules/stock/ppp/ppp.component';
 import { ViewDetailsComponent } from './layouts/modules/admin-orders/view-details/view-details.component';
-import { BannerComponent } from './banner/banner.component';
-import { HttpModule } from '@angular/http';
+import { BannerComponent } from './products/banner/banner.component';
+import { HttpModule, Http } from '@angular/http';
 import { NavbarModule } from './bs-navbar/bs-navbar.modules';
 import { CustomerDetailsComponent } from './layouts/modules/customer-details/customer-details.component';
 import { StockComponent } from './layouts/modules/stock/stock.component';
@@ -46,34 +46,45 @@ import { SharesModule } from './shares/shares.module';
 import { AddstockComponent } from './addstock/addstock.component';
 import { UserOrderDetailsComponent } from './user-order-details/user-order-details.component';
 import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.component';
+import { TranslateStaticLoader, TranslateModule, TranslateLoader, MissingTranslationHandler } from 'ng2-translate';
+import { MyMissingTranslationHandler } from './shares/services/missingtemplate.component';
+import { ProductsModule } from './products/products.module';
 
 
 
 //import { ProductCardComponent } from './product-card/product-card.component';
 
 
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
     BsNavbarComponent,
-    ProductsComponent,
+    
     ShoppingCartComponent,
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
     LoginComponent,
-    ProductFilterComponent,
+   
     WelcomeComponent,
-    FooterComponent,
-    ProductDetailsComponent,
+   
+    
     
     ShoppingCartSummaryComponent,
     OrdersStatusComponent,
     ShippingFormComponent,
-    BannerComponent,
+    
     EditProfileComponent,
     UserOrderDetailsComponent,
 
+
+
+    
     
         
     
@@ -84,6 +95,7 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
     HttpModule,
 
     //DefaultModule,
+    //ProductsModule,
     SharesModule,
 
     NavbarModule,
@@ -91,12 +103,24 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
     ParticlesModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    NgbModule.forRoot(),
+
+
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      },
+      isolate: true
+    }),
+
+    
+
     RouterModule.forRoot([
       
       { path: '', component: WelcomeComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'products/details/:id', component: ProductDetailsComponent},
+
+
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent },
       // {path: 'add', component: AddstockComponent},
@@ -126,6 +150,11 @@ import { OrdersStatusComponent } from './my-orders/orders-status/orders-status.c
       // },
 
     ]),
+
+  ],
+
+  providers: [
+    { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
 
   ],
  

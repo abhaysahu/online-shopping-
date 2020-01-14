@@ -24,6 +24,11 @@ const routes: Routes = [
     path: 'dashboards',
     loadChildren:'./layouts/default/default.module#DefaultModule'
   },
+
+  {
+    path: 'products',
+    loadChildren: './products/products.module#ProductsModule'
+  },
   
 //   { 
 //   path: 'dashboards',component: DefaultComponent,
