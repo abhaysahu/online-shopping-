@@ -24,6 +24,15 @@ import { PppComponent } from '../modules/stock/ppp/ppp.component';
 import { AddstockComponent } from 'src/app/addstock/addstock.component';
 import { PhoneComponent } from 'src/app/phone/phone.component';
 import { SharesModule } from 'src/app/shares/shares.module';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MyMissingTranslationHandler } from 'src/app/shares/services/missingtemplate.component';
+
+
+// export function createTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
 
 
 @NgModule({
@@ -70,10 +79,21 @@ import { SharesModule } from 'src/app/shares/shares.module';
     MatTableModule,
     MatDialogModule,
     DefaultRoutingModule,
+  //   TranslateModule.forChild({
+  //     loader: {
+  //       provide: TranslateLoader,
+  //       useFactory: (createTranslateLoader),
+  //       deps: [HttpClient]
+  //     },
+  //     isolate: true
+  // }),
     //SharesModule
   ],
+  
   providers: [
-    DashboardService
+    DashboardService,
+    { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
+
   ]
 })
 export class DefaultModule { }

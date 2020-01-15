@@ -37,7 +37,7 @@ import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ng
 
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 
@@ -65,12 +65,13 @@ export function createTranslateLoader(http: HttpClient) {
 
     NgbModule.forRoot(),
 
-    TranslateModule.forRoot({
+    TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
-      }
+      },
+      isolate: true
   }),
   ],
 

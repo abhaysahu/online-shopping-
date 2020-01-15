@@ -10,10 +10,12 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { Http } from '@angular/http';
 import { MyMissingTranslationHandler } from '../shares/services/missingtemplate.component';
-import { MissingTranslationHandler } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 
-// export function createTranslateLoader(http: Http) {
-//   return new TranslateStaticLoader(http, './assets/i18n', '.json');
+// export function createTranslateLoader(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 // }
 
 @NgModule({
@@ -30,11 +32,14 @@ import { MissingTranslationHandler } from '@ngx-translate/core';
     ProductsRoutingModule,
     SharesModule,
 
-    // TranslateModule.forRoot({
-    //   provide: TranslateLoader,
-    //   useFactory: (createTranslateLoader),
-    //   deps: [Http]
-    // })
+  //   TranslateModule.forChild({
+  //     loader: {
+  //       provide: TranslateLoader,
+  //       useFactory: (createTranslateLoader),
+  //       deps: [HttpClient]
+  //     },
+  //     isolate: true
+  // }),
   ],
   
 
