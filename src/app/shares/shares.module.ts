@@ -15,7 +15,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { StockService } from './services/stock.service';
 import { ReportService } from './services/report.service';
 import { ExcelService } from './services/excel.service';
-import { MissingTranslationHandler, TranslateStaticLoader, TranslateModule, TranslateLoader } from 'ng2-translate';
 import { MyMissingTranslationHandler } from './services/missingtemplate.component';
 import { Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -30,14 +29,17 @@ import { DataTableModule } from 'angular5-data-table';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { OrderStatusComponent } from '../layouts/modules/admin-orders/order-status/order-status.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 
 
 
 
-export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n', '.json');
 }
+
 
 @NgModule({
   declarations: [
@@ -53,23 +55,23 @@ export function createTranslateLoader(http: Http) {
     FormsModule,
     CustomFormsModule,
     DataTableModule,
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    AngularFireDatabaseModule, 
+    AngularFireAuthModule, 
     MatTableModule,
-    MatPaginatorModule,
+    MatPaginatorModule, 
     MatSortModule,
     
-    RouterModule.forChild([
-      
-]),
+    RouterModule.forChild([]),
 
     NgbModule.forRoot(),
 
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
-    })
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+  }),
   ],
 
   exports: [

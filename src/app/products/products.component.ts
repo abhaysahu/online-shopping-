@@ -5,9 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../shares/models/product';
 import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { Subscription } from 'rxjs'; 
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { LanguageService } from '../shares/services/language.service';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-products',

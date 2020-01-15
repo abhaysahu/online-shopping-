@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CategoryService } from 'src/app/shares/services/category.service';
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'product-filter',

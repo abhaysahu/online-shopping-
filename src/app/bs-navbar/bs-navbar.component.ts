@@ -4,10 +4,11 @@ import { AppUser } from '../shares/models/app-user';
 import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { Observable, Subscription } from 'rxjs';
 import { ShoppingCart } from '../shares/models/shopping-cart';
-import { TranslateService } from 'ng2-translate';
+
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../shares/services/language.service';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'bs-navbar',

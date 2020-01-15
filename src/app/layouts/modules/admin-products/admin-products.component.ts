@@ -5,8 +5,8 @@ import { Product } from 'src/app/shares/models/product';
 //import { DataTableResource } from 'angular-4-data-table';
 import { DataTableResource } from 'angular5-data-table';
 import { LanguageService } from 'src/app/shares/services/language.service';
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 
 @Component({

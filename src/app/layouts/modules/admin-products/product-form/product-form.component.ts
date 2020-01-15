@@ -3,12 +3,12 @@ import { CategoryService } from 'src/app/shares/services/category.service';
 import { ProductService } from 'src/app/shares/services/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import 'rxjs/add/operator/take';
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 
 import * as firebase from 'firebase';
 import { Subscription } from 'rxjs';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 
 

@@ -6,8 +6,8 @@ import { Product } from '../../shares/models/product';
 import { ShoppingCartService } from '../../shares/services/shopping-cart.service';
 import { ShoppingCart } from '../../shares/models/shopping-cart';
 import { LanguageService } from '../../shares/services/language.service';
-import { TranslateService, LangChangeEvent } from 'ng2-translate';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-details',

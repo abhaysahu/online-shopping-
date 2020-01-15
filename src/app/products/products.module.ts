@@ -9,12 +9,12 @@ import { FooterComponent } from '../products/footer/footer.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { Http } from '@angular/http';
-import { TranslateStaticLoader, TranslateModule, TranslateLoader, MissingTranslationHandler } from 'ng2-translate';
 import { MyMissingTranslationHandler } from '../shares/services/missingtemplate.component';
+import { MissingTranslationHandler } from '@ngx-translate/core';
 
-export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
-}
+// export function createTranslateLoader(http: Http) {
+//   return new TranslateStaticLoader(http, './assets/i18n', '.json');
+// }
 
 @NgModule({
   declarations: [
@@ -29,12 +29,14 @@ export function createTranslateLoader(http: Http) {
     CommonModule,
     ProductsRoutingModule,
     SharesModule,
-    TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
-    })
+
+    // TranslateModule.forRoot({
+    //   provide: TranslateLoader,
+    //   useFactory: (createTranslateLoader),
+    //   deps: [Http]
+    // })
   ],
+  
 
   providers: [
     { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
