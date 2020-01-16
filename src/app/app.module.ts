@@ -26,9 +26,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CustomFormsModule } from 'ng2-validation';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { AddstockComponent } from './addstock/addstock.component';
 
 
-
+ 
 //import { ProductCardComponent } from './product-card/product-card.component';
 
 
@@ -41,7 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     BsNavbarComponent,
-    
+    //AddstockComponent,
     
     
     
@@ -82,7 +83,7 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       },
-      isolate: true
+      isolate: false
   }),
 
 
@@ -93,7 +94,7 @@ export function createTranslateLoader(http: HttpClient) {
 
       
       { path: 'login', component: LoginComponent },
-      // {path: 'add', component: AddstockComponent},
+       //{path: 'add', component: AddstockComponent},
      
 
 

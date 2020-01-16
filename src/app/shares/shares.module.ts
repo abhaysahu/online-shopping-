@@ -71,7 +71,7 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       },
-      isolate: true
+      isolate: false
   }),
   ],
 

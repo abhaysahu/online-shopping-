@@ -7,3 +7,28 @@
 .navbar-brand img { height:30px; }
 .navbar-dark .navbar-nav .nav-link {color:#fff;}
 .navbar-dark .navbar-nav .active .nav-link {color:#fff;} 
+
+
+
+.text{ 
+    font-size: 15px;
+    width: 200px;
+    height:50px; 
+    font-family: cursive;
+    font-weight: 1000;
+    background-color: black;
+    color:white;
+    border: 2px red solid;
+    padding-left: 20px;
+    
+}
+
+
+.modal-body {
+
+    padding-left: 140px;
+
+
+}
+
+

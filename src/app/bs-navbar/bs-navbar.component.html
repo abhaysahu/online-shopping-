@@ -46,7 +46,9 @@
         <ul class="nav navbar-nav">
             <ng-template #anonymousUser>
               <li *ngIf="!(user$ | async)" class="nav-item">
-                  <a class="nav-link" routerLink="/login">Login</a>
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Stock</button> -->
+
+                  <a class="nav-link" data-toggle="modal" data-target="#exampleModal1">Login</a>
               </li>
             </ng-template>
             <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
@@ -68,3 +70,35 @@
       </div>
   </div>
 </nav>
+
+
+
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Login With Anyone</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> 
+      </div>
+      <div class="modal-body">
+
+        <div class="items-center">
+          <button (click)="login()" type="button" class="btn btn-primary" class="text"><i class="fa fa-google" style="font-size:25px;color:red"></i>Login with Google</button>
+          <br>
+          <br>
+          <button (click)="loginFaceBook()" type="button" class="btn btn-primary" class="text" style="padding-left: 10px;"><i class="fa fa-facebook" style="font-size:25px;color:red"></i>Login with FaceBook</button>
+        
+          <!-- <a routerLink="/login/phone/number" class="btn btn-primary">Login with Phone Number</a> -->
+        </div>
+        
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">okk</button>
+      </div>
+    </div>
+  </div>
+</div>

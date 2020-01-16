@@ -1,73 +1,74 @@
-<div class="toping"> 
-<h1>{{ 'Shopping.ShoppingCart' | translate }} </h1>
-<div class="row col-10" *ngIf="cart$ | async as cart">
-  <p>
-    {{ 'Shopping.Detailes1' | translate }} {{ cart.totalItemsCount }} {{ 'Shopping.Detailes2' | translate }}
-    <button
-    *ngIf="cart.items.length"
-    (click)="clearCart()"
-    class="btn btn-light btn-sm">{{ 'Shopping.ClearButton' | translate }}
-  </button>
-  </p> 
-  <table class="table"> 
-    <thead>
-      <tr>
-        <th></th>
-        <th>{{ 'Shopping.Product' | translate }}</th>
-        <th class="text-center" style="width: 230px">{{ 'Shopping.Quantity' | translate }}</th>
-        <th class="text-right" style="width: 200px">{{ 'Shopping.Price' | translate }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cart.items">
-        <td *ngIf="item.code">
-          <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail"></div>
-        </td>    
-        <td *ngIf="item.code">
-            <div *ngIf="show; else elseBlock">{{ item.title }}</div>
-            <ng-template #elseBlock>{{ item.titleH }}</ng-template>
-        </td>
-        <td *ngIf="item.code">
-          <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
-        </td>
-        <td class="text-right" *ngIf="item.code">
-            <div *ngIf="!item.offer; else elseBlock">
-                <p class="card-text">{{ (item.price) * item.quantity | currency: "&#8377;": true}} 
-                </p>
-            </div>
-                    <ng-template #elseBlock>
-                          <p> {{ item.totalPrice }}</p>   
-                    </ng-template>
-        </td>
-      </tr>  
-    </tbody>
-    <tfoot>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th class="text-right">{{ cart.totalPrice | currency: "&#8377;" :true }}</th>
-      </tr>
-    </tfoot>
-  </table>
-  <div class="line"> 
-  <a class="top"
-    *ngIf="cart.items.length"
-    routerLink="/check-out" 
-    class="btn btn-primary">{{ 'Shopping.CheckOut' | translate }}</a>
+<div class="container">
+  <div class="toping"> 
+    <h1>{{ 'Shopping.ShoppingCart' | translate }} </h1>
+    <div class="row col-10" *ngIf="cart$ | async as cart">
+      <p>
+        {{ 'Shopping.Detailes1' | translate }} {{ cart.totalItemsCount }} {{ 'Shopping.Detailes2' | translate }}
+        <button
+        *ngIf="cart.items.length"
+        (click)="clearCart()"
+        class="btn btn-light btn-sm">{{ 'Shopping.ClearButton' | translate }}
+      </button>
+      </p> 
+      <table class="table"> 
+        <thead>
+          <tr>
+            <th></th>
+            <th>{{ 'Shopping.Product' | translate }}</th>
+            <th class="text-center" style="width: 230px">{{ 'Shopping.Quantity' | translate }}</th>
+            <th class="text-right" style="width: 200px">{{ 'Shopping.Price' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cart.items">
+            <td *ngIf="item.code">
+              <div [style.backgroundImage]="'url(' + item.imageUrl + ')'" class="thumbnail"></div>
+            </td>    
+            <td *ngIf="item.code">
+                <div *ngIf="show; else elseBlock">{{ item.title }}</div>
+                <ng-template #elseBlock>{{ item.titleH }}</ng-template>
+            </td>
+            <td *ngIf="item.code">
+              <product-quantity [product]="item" [shopping-cart]="cart"></product-quantity>
+            </td>
+            <td class="text-right" *ngIf="item.code">
+                <div *ngIf="!item.offer; else elseBlock">
+                    <p class="card-text">{{ (item.price) * item.quantity | currency: "&#8377;": true}} 
+                    </p>
+                </div>
+                        <ng-template #elseBlock>
+                              <p> {{ item.totalPrice }}</p>   
+                        </ng-template>
+            </td>
+          </tr>  
+        </tbody>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th class="text-right">{{ cart.totalPrice | currency: "&#8377;" :true }}</th>
+          </tr>
+        </tfoot>
+      </table>
+      <div class="line"> 
+      <a class="top"
+        *ngIf="cart.items.length"
+        routerLink="/check-out" 
+        class="btn btn-primary">{{ 'Shopping.CheckOut' | translate }}</a>
 
-    <div class="top">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+        <div class="top">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Product</button>
+        </div>
+
+        <div class="top">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Manual Product</button>
+        </div>
+
+      </div>
     </div>
-
-    <div class="top">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Manual Product</button>
-    </div>
-
   </div>
 </div>
-</div>
-
 
 
 
@@ -99,13 +100,13 @@
                     <label for="title">Product Name</label>
                     <input #title="ngModel" [(ngModel)]="product.title" name="title" id="title" type="text" class="form-control" required placeholder="Product Code">
                     <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
-                      Product Code is required.
+                      Product Name is required
                     </div>
                   </div>
                   
                     
                   <div class="form-group"> 
-                      <label for="weight">Stock</label>
+                      <label for="weight">Weight</label>
                       <div class="input-group-prepend">
                         <input #weight="ngModel" [(ngModel)]="product.weight" name="weight" id="weight" class="form-control" placeholder="500 gm or 2 kg">
                       </div> 

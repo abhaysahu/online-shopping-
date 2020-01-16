@@ -8,17 +8,17 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class AddstockComponent implements OnInit {
 
-  constructor(private db: AngularFireDatabase) {
-    this.db.list('/orders', {
-      query: {
-        orderByChild:'userId',
-        equalTo: 't30f7zxWYDUNWoxioKENWKwaknA3'
-      }
-    }).subscribe(data=>{
-      console.log(data) 
-    })
-    console.log("abhay sahu")
-   }
+  // constructor(private db: AngularFireDatabase) {
+  //   this.db.list('/orders', {
+  //     query: {
+  //       orderByChild:'userId',
+  //       equalTo: 't30f7zxWYDUNWoxioKENWKwaknA3'
+  //     }
+  //   }).subscribe(data=>{
+  //     console.log(data) 
+  //   })
+  //   console.log("abhay sahu")
+  //  }
 
   ngOnInit() {
   }

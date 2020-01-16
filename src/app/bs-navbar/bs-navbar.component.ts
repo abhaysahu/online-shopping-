@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { LanguageService } from '../shares/services/language.service';
 import { CookieService } from 'ngx-cookie-service';
 import { TranslateService } from '@ngx-translate/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'bs-navbar',
@@ -32,7 +33,8 @@ showNav = false;
     private cookie: CookieService,
     private shoppingCartService: ShoppingCartService,
     private translate: TranslateService, 
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private db: AngularFireDatabase,
     ) {   
 
       this.language = this.cookie.get("language")
@@ -53,6 +55,18 @@ showNav = false;
       translate.use(browserLang.match(/en|hi/) ? browserLang : 'en');
       }
  
+  }
+
+  login() 
+  {
+    this.auth.login();
+  }
+
+
+  loginFaceBook()
+  {
+    this.auth.loginFaceBook();
+
   }
 
   changeLanguage(lang){
