@@ -20,7 +20,6 @@ import { Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { ProductDetailsComponent } from '../products/product-details/product-details.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';

@@ -1,5 +1,5 @@
 <div *ngIf="product.title" class="card">
-    <a [routerLink]="['/products/details/', product.$key]" data-toggle="tooltip" data-placement="right" title="Click to Shop" >
+    <a [routerLink]="['/products/products/details/', product.$key]" data-toggle="tooltip" data-placement="right" title="Click to Shop" >
   <img *ngIf="product.imageUrl" height="270" width="40" class="card-img-top" [src]="product.imageUrl" alt="{{ product.title }}">
   </a> 
  

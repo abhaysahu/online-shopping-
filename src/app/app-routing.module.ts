@@ -12,10 +12,10 @@ const routes: Routes = [
 
   {
     path: 'products',
-    loadChildren: './products/products.module#ProductsModule'
+    loadChildren: './default-product/default-product.module#DefaultProductModule'
   },
   
-  {
+  { 
     path: 'shopping-cart',
     loadChildren: './default-shopping-cart/default-shopping-cart.module#DefaultShoppingCartModule'
   },

@@ -123,6 +123,6 @@ export class ShippingFormComponent implements OnInit, OnDestroy {
 
 
     let result = await this.orderService.placeOrder(order);
-    this.router.navigate(['/order-success', result.key])
+    this.router.navigate(['/shopping-cart/order-success', result.key])
   }
 }

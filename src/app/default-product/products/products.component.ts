@@ -1,13 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from '../shares/services/product.service';
-import { CategoryService } from '../shares/services/category.service';
+
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../shares/models/product';
-import { ShoppingCartService } from '../shares/services/shopping-cart.service';
+
 import { Subscription } from 'rxjs'; 
-import { LanguageService } from '../shares/services/language.service';
+
 import { CookieService } from 'ngx-cookie-service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Product } from 'src/app/shares/models/product';
+import { CategoryService } from 'src/app/shares/services/category.service';
+import { ProductService } from 'src/app/shares/services/product.service';
+import { ShoppingCartService } from 'src/app/shares/services/shopping-cart.service';
 
 @Component({
   selector: 'app-products',

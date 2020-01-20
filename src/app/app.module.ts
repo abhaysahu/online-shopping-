@@ -28,6 +28,7 @@ import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ng
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AddstockComponent } from './addstock/addstock.component';
 import { DefaultShoppingCartComponent } from './default-shopping-cart/default-shopping-cart.component';
+import { DefaultProductComponent } from './default-product/default-product.component';
 
 
  
