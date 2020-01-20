@@ -48,9 +48,11 @@ export class ViewDetailsComponent implements OnInit {
         this.orders = orders
 
         console.log(orders.items)
+        this.SumOfQuantity=0;
+        this.SumOfPrice=0;
 
         
-        for(let item of orders.items )
+        for(let item of orders.items)
         {
           this.SumOfQuantity = this.SumOfQuantity + item.quantity
           this.SumOfPrice = this.SumOfPrice + item.totalPrice

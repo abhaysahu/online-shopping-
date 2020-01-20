@@ -11,5 +11,6 @@ export interface Product {
     imageName: string;
     category: string;
     imageUrl: string;
-    offer: number  
+    offer: number;
+    weight: string;
 }

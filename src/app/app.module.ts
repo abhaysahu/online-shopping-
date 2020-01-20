@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment.prod';
 import { AuthGuardService } from './shares/services/auth-guard.service';
 import { ParticlesModule } from 'angular-particle';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { NavbarModule } from './bs-navbar/bs-navbar.modules';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserOrderDetailsComponent } from './user-order-details/user-order-details.component';
@@ -26,9 +26,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CustomFormsModule } from 'ng2-validation';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { AddstockComponent } from './addstock/addstock.component';
-import { DefaultShoppingCartComponent } from './default-shopping-cart/default-shopping-cart.component';
-import { DefaultProductComponent } from './default-product/default-product.component';
 
 
  

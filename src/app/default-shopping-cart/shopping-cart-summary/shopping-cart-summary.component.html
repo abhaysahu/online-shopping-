@@ -5,7 +5,7 @@
     <ul class="list-group list-group-flush">
         <div *ngFor="let item of cart.items">
           <li *ngIf="item.code"  class="list-group-item">
-        {{ item.quantity }} x {{ item.title }} x {{ item.code}}
+            {{ item.title }} = {{ item.quantity }} x {{ item.price }}
         <div class="float-right">
           {{ item.totalPrice | currency:"&#8377;":true }}
         </div>
@@ -21,3 +21,5 @@
     </ul>
   </div> 
 </div> 
+<br>
+<br>

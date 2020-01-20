@@ -33,6 +33,8 @@ export class ShoppingCartComponent implements OnInit {
     private cookie: CookieService,
     private router: Router,
     ) { 
+      this.product.name = "";
+          this.product.weight = "";
 
       translate.onLangChange.subscribe(lang=>{
         this.browserLang = lang;
@@ -61,8 +63,7 @@ export class ShoppingCartComponent implements OnInit {
         {
           this.messageClass = 'alert alert-success';
           this.message = "Stock Update Success fully";
-          product.name = "";
-          product.weight = "";
+          
         }
         else
         {

@@ -36,12 +36,15 @@
     <div class="form-group">
         <label for="description">{{ 'Shipping.AboutSize' | translate }}</label>
           <textarea #description [(ngModel)]="shipping.description" name="description" id="description" tyoe="text" rows="8" cols="80" placeholder="{{ 'Shipping.PlaceAboutSize' | translate }}" class="form-control"></textarea>
-          <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+          <!-- <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
             <div *ngIf="description.errors.required">{{ 'Shipping.AboutSizeRequired' | translate }} </div>
-        </div>
+          </div> -->
       </div>
     <button  
       [disabled]="!f.valid"
       (click)="placeOrder()" 
       class="btn btn-primary">{{ 'Shipping.Place' | translate }}</button>
   </form>
+
+  <br>
+  <br>
