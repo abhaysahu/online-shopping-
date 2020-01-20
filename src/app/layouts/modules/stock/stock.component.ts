@@ -85,11 +85,10 @@ export class StockComponent implements OnInit {
       select = products.map(products => {
         return {
           code: products.code,
-          name:products.name,
-          bill: products.bill,
+          name:products.title,
           stock: products.stock,
-          price:products.price,
-          totalPrice:(products.price * products.stock)
+          price:products.purchase_price,
+          totalPrice:(products.purchase_price * products.stock)
         }
       })
 
