@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from '../shares/services/shopping-cart.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { ShoppingCartService } from 'src/app/shares/services/shopping-cart.service';
 
 
 @Component({

@@ -2,11 +2,11 @@
 <div class="container">
 
     <div>
-        <a class="abhay" routerLink="/dashboards/admin/stock/new" class="btn btn-primary">New Stock</a>
 
     
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Add Stock</button>
+        
         <br>
         
         <button (click)="exportAsXLSX()"><i class="fa fa-file-excel-o" style="font-size:48px;color:blue"></i></button>
@@ -46,8 +46,8 @@
       </data-table-column>
     
       <data-table-column
-        [property]="'price'"
-        [header]="'Price'"
+        [property]="'purchase_price'"
+        [header]="'Purchase Price'"
         [sortable]="true" 
         [resizable]="true"
       >
@@ -80,13 +80,7 @@
       </ng-template>
       </data-table-column>
      
-      <data-table-column
-        [property]="'$key'"
-      >
-      <ng-template #dataTableCell let-item="item">
-          <a [routerLink]="['/dashboards/admin/stock/', item.$key]">Edit</a>
-      </ng-template>
-    </data-table-column>
+      
     </data-table>
 </div>
 

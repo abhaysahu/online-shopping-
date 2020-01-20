@@ -17,7 +17,7 @@ const routes: Routes = [
   
   {
     path: 'shopping-cart',
-    loadChildren: './shopping-cart/shopping-cart.module#ShoppingCartModule'
+    loadChildren: './default-shopping-cart/default-shopping-cart.module#DefaultShoppingCartModule'
   },
  
 

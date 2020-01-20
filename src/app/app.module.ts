@@ -27,6 +27,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { AddstockComponent } from './addstock/addstock.component';
+import { DefaultShoppingCartComponent } from './default-shopping-cart/default-shopping-cart.component';
 
 
  

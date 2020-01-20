@@ -13,13 +13,13 @@ export class StockService {
 
   get(stockId)
   {
-    return this.db.object('/stock/' + stockId)
+    return this.db.object('/product/both/' + stockId)
   }
 
 
   getAll()
   {
-    return this.db.list('/stock');
+    return this.db.list('/product/both');
   }
 
 
@@ -34,9 +34,10 @@ export class StockService {
 
 
   update(stockId,product){
-    return this.db.object('/stock/' + stockId).update(product);
+    return this.db.object('/product/both/' + stockId).update(product);
   }
 
+  
   delete(stockId)
   {
     return this.db.object('/stock/' + stockId).remove();
