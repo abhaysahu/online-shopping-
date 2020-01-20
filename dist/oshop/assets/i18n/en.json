@@ -7,7 +7,7 @@
     "Sel_lang": "Chose Language",
     "Languages":{
         "English":"English",
-        "French":"French",
+        "French":"French", 
         "Chinese":"Chinese",
         "Hindi":"हिंदी"
     },
@@ -41,7 +41,7 @@
         "CheckOut": "Check Out",
         "Order": "Order Detailes",
         "Total": "Total Price", 
-        "Size": "About Size",
+        "Manual": "Manual Product",
         "DesProduct": "Size of Product"
 
     },
@@ -79,6 +79,10 @@
         "title": "Title",
         "price": "Price",
         "Edit": "Edit"
+    },
+
+    "someOther": {
+        "add_to_cart": "Add to cart"
     }
      
   }
