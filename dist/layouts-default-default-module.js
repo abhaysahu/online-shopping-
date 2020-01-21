@@ -11075,11 +11075,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CustomerDetailsComponent = /** @class */ (function () {
-    function CustomerDetailsComponent(userService) {
+    function CustomerDetailsComponent() {
         var _this = this;
-        this.userService = userService;
-        this.user$ = this.userService.getAll();
-        this.userService.getAll().subscribe(function (user) {
+        this. = ;
+        this.user$ = this..getAll();
+        this..getAll().subscribe(function (user) {
             _this.user = user;
             console.log(_this.user);
         });
@@ -11097,7 +11097,7 @@ var CustomerDetailsComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./customer-details.component.html */ "./src/app/layouts/modules/customer-details/customer-details.component.html"),
             styles: [__webpack_require__(/*! ./customer-details.component.css */ "./src/app/layouts/modules/customer-details/customer-details.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shares_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shares_services_user_service__WEBPACK_IMPORTED_MODULE_2__[""]])
     ], CustomerDetailsComponent);
     return CustomerDetailsComponent;
 }());

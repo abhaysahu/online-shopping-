@@ -1,9 +1,14 @@
-
-
 <div>
-  <br>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/dashboards">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Product</li>
+    </ol>
+  </nav>
+
 <p>
-    <a class="abhay" routerLink="/dashboards/admin/products/new" class="btn btn-primary">{{ 'Product.Add-Product' | translate }}</a>
+    <a  routerLink="/dashboards/admin/products/new" class="btn btn-primary abhay">{{ 'Product.Add-Product' | translate }}</a>
 </p>
 <p>
   <input

@@ -1,9 +1,19 @@
-<div class="top"> 
+<div> 
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/dashboards">Dashboard</a></li>
+      <li class="breadcrumb-item"><a routerLink="/dashboards/report">Report</a></li>
+
+      <li class="breadcrumb-item active" aria-current="page">Report</li>
+    </ol>
+  </nav>
+
+
 
   <h1>{{ productCode }}</h1>
 
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Complete Report</button>
-    <br>
 
     
     <data-table
