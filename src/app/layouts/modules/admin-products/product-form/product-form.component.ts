@@ -45,6 +45,9 @@ export class ProductFormComponent implements OnInit {
     nextAvailableKey: string;
     subscription: Subscription;
 
+    visible = false;
+    field = false;
+
 
   constructor(
     private router: Router,
@@ -126,19 +129,19 @@ export class ProductFormComponent implements OnInit {
 
   photoSelectedForList(event: any) {
 
+    this.visible=true;
     const file: File = event.target.files[0];
     const metaData = {'contentType': file.type}
     const storageRef: firebase.storage.Reference = firebase.storage().ref(`/photos/list/${this.nextAvailableKey}`); 
     const uploadTask: firebase.storage.UploadTask = storageRef.put(file, metaData);
 
-   
-
     console.log("Uploading: ",file.name);
 
    uploadTask.then((uploadSnapshot: firebase.storage.UploadTaskSnapshot) => {
-   console.log("Upload is Complete!");
    this.downloadUrl = uploadSnapshot.downloadURL;
-   console.log(this.downloadUrl)
+   this.visible=false;
+   this.product.imageUrl = this.downloadUrl
+   console.log(this.product.imageUrl)
   // firebase.database().ref(`/photos/list/${nextAvailableKey}`).set(downloadUrl)
   })
 

@@ -123,6 +123,7 @@
               </div>  
             </div>
 
+
           <div class="form-group">
               <label for="category">Category</label>
               <select #category="ngModel" [(ngModel)]="product.category" name="category" id="category" class="form-control" required>
@@ -135,14 +136,20 @@
                   Category is required.
               </div>
           </div>
+
+
         
           <div class="form-group"> 
               <label for="imageUrl"></label >
 
-                <button type="button" (click)="featuredInput1.click()">Upload Image</button>
+                <button type="button" class="btn btn-primary" (click)="featuredInput1.click()">
+                  <span *ngIf="visible" class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ></span>
+                  Upload Image
+                </button>
                 <input #featuredInput1 style="display: none;" type="file" (change)="photoSelectedForList($event)">
-              <input #imageUrl="ngModel" [(ngModel)]="product.imageUrl || downloadUrl" name="imageUrl" id="imageUrl" type= "text" class="form-control" required url placeholder="https://images.pexels.com/photos/39803/pexels-photo-39803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-              <input #imageName="ngModel" [(ngModel)]="product.imageName || nextAvailableKey" name="imageName" id="imageName" type= "text" class="form-control">
+                
+                <input style="margin-top: 10px;" #imageUrl="ngModel" [(ngModel)]="product.imageUrl || downloadUrl" name="imageUrl" id="imageUrl" type= "text" class="form-control" required url placeholder="https://images.pexels.com/photos/39803/pexels-photo-39803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <input style="display: none;" #imageName="ngModel" [(ngModel)]="product.imageName || nextAvailableKey" name="imageName" id="imageName" type= "text" class="form-control" disabled>
               <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
                 <div *ngIf="imageUrl.errors.required">Image URL is required.</div>
                 <div *ngIf="imageUrl.errors.url">please enter a valid URL.</div>  
