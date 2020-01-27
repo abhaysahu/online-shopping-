@@ -13,6 +13,28 @@ export class AppComponent {
     auth.user$.subscribe(user => {
       if(!user) return;
        
+
+      userService.status(user).subscribe(data => {
+        console.log(data)
+        if(data.$value)
+        {
+          console.log("yes")
+        }
+        else
+        {
+          if(data.status)
+          {
+            console.log("function")
+
+          }
+          else
+          {
+            console.log("log out")
+          }
+        }
+      })
+
+
         userService.save(user);
 
         let returnUrl = localStorage.getItem('returnUrl');
@@ -27,3 +49,13 @@ export class AppComponent {
   }
   
 }
+
+
+
+// var user = firebase.auth().currentUser;
+  
+//     user.delete().then(data =>{
+//       console.log("yes");
+//     }).catch (function(error) {
+//       console.log(error)
+//     })

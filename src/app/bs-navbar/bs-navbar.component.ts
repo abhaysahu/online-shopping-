@@ -21,12 +21,15 @@ export class BsNavbarComponent implements OnInit {
 public name: "abhay shau"
 
 showNav = false;
+show = true;
 
   private subscription: Subscription;
 
   appUser: AppUser;
   cart$: Observable<ShoppingCart>;
   language;
+
+  visible: false;
 
   constructor(
     private auth: AuthService, 
@@ -59,7 +62,16 @@ showNav = false;
 
   login() 
   {
-    this.auth.login();
+    this.auth.login().then(data =>{
+      //console.log(data)
+      if(!confirm('Successfully Logged In with Google')) return;
+    
+
+    }, err => {
+      if(!confirm('your account is under review you will be notified when it will be approved')) return;
+    }
+
+    )
   }
 
 

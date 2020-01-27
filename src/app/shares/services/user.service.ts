@@ -11,25 +11,21 @@ export class UserService {
 
   save(user: firebase.User){
 
-    this.db.object('/users/' + user.uid).subscribe (data => {
-      if(data.status)
-      {
-        console.log("yes");
-      }
 
-      else
-      {
-        console.log("no")
-      }
-
-    })
-
+    
+    
+    console.log(user)
     this.db.object('/users/' + user.uid).update({
       name: user.displayName,
       email: user.email,
       image: user.photoURL,
       dataCreated: new Date().getTime()
     });
+  }
+
+  status(user: firebase.User){
+
+    return this.db.object('/users/' + user.uid)
   }
 
   get(uid: string): FirebaseObjectObservable<AppUser>
