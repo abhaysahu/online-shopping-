@@ -16,7 +16,6 @@ import { StockService } from './services/stock.service';
 import { ReportService } from './services/report.service';
 import { ExcelService } from './services/excel.service';
 import { MyMissingTranslationHandler } from './services/missingtemplate.component';
-import { Http } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductCardComponent } from './product-card/product-card.component';
@@ -27,7 +26,6 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
 import { DataTableModule } from 'angular5-data-table';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { OrderStatusComponent } from '../layouts/modules/admin-orders/order-status/order-status.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
@@ -53,12 +51,9 @@ export function createTranslateLoader(http: HttpClient) {
     SharesRoutingModule,
     FormsModule,
     CustomFormsModule,
-    DataTableModule,
     AngularFireDatabaseModule, 
     AngularFireAuthModule, 
-    MatTableModule,
-    MatPaginatorModule, 
-    MatSortModule,
+    
     
     RouterModule.forChild([]),
 
@@ -80,10 +75,6 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     FormsModule,
     CustomFormsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    DataTableModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     NgbModule.forRoot().ngModule,

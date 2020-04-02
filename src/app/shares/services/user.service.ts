@@ -10,9 +10,6 @@ export class UserService {
   constructor(private db: AngularFireDatabase) { }
 
   save(user: firebase.User){
-
-
-    
     
     console.log(user)
     this.db.object('/users/' + user.uid).update({
@@ -23,10 +20,10 @@ export class UserService {
     });
   }
 
-  status(user: firebase.User){
+  // status(user: firebase.User){
 
-    return this.db.object('/users/' + user.uid)
-  }
+  //   return this.db.object('/users/' + user.uid)
+  // }
 
   get(uid: string): FirebaseObjectObservable<AppUser>
   {

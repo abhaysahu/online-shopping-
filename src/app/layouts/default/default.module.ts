@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 
 import { RouterModule } from '@angular/router';
-import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatDialogModule } from '@angular/material';
+import { MatSidenavModule, MatDividerModule, MatCardModule, MatPaginatorModule, MatTableModule, MatDialogModule, MatSortModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/layouts/modules/dashboard.service';
 import { DashboardsComponent } from 'src/app/layouts/modules/dashboards/dashboards.component';
@@ -28,6 +28,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MyMissingTranslationHandler } from 'src/app/shares/services/missingtemplate.component';
+import { DataTableModule } from 'angular5-data-table';
 
 
 // export function createTranslateLoader(http: HttpClient) {
@@ -71,12 +72,16 @@ import { MyMissingTranslationHandler } from 'src/app/shares/services/missingtemp
     RouterModule,
     ShardModule,
     SharesModule,
+
+    DataTableModule,    
+    MatTableModule,
+    MatPaginatorModule, 
+    MatSortModule,
     MatSidenavModule,
     MatDividerModule,
     FlexLayoutModule,
     MatCardModule,
-    MatPaginatorModule,
-    MatTableModule,
+    
     MatDialogModule,
     DefaultRoutingModule,
   //   TranslateModule.forChild({

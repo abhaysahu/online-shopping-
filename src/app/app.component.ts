@@ -14,25 +14,25 @@ export class AppComponent {
       if(!user) return;
        
 
-      userService.status(user).subscribe(data => {
-        console.log(data)
-        if(data.$value)
-        {
-          console.log("yes")
-        }
-        else
-        {
-          if(data.status)
-          {
-            console.log("function")
+      // userService.status(user).subscribe(data => {
+      //   console.log(data)
+      //   if(data.$value)
+      //   {
+      //     console.log("yes")
+      //   }
+      //   else
+      //   {
+      //     if(data.status)
+      //     {
+      //       console.log("function")
 
-          }
-          else
-          {
-            console.log("log out")
-          }
-        }
-      })
+      //     }
+      //     else
+      //     {
+      //       console.log("log out")
+      //     }
+      //   }
+      // })
 
 
         userService.save(user);
