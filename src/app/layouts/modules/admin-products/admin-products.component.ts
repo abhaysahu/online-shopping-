@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from 'src/app/shares/services/product.service';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/shares/models/product';
-//import { DataTableResource } from 'angular-4-data-table';
+
 import { DataTableResource } from 'angular5-data-table';
 import { LanguageService } from 'src/app/shares/services/language.service';
 import { CookieService } from 'ngx-cookie-service';

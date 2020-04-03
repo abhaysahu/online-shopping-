@@ -7,7 +7,8 @@
     <h5 class="card-title">{{ product.title }}</h5>
 
     <div *ngIf="!product.offer; else elseBlock">
-        <p class="card-text" style="color: #B12704; font-size: 21px">{{ product.price | currency: "&#8377;": true}} 
+      
+        <p class="card-text" style="color: #B12704; font-size: 21px">{{ product.price | number }} 
           <p style="color: green; font-size: 16px">No Offer
         </p>
     </div>

@@ -17,7 +17,7 @@ import { ReportService } from './services/report.service';
 import { ExcelService } from './services/excel.service';
 import { MyMissingTranslationHandler } from './services/missingtemplate.component';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 import { FormsModule } from '@angular/forms';
@@ -57,7 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
     
     RouterModule.forChild([]),
 
-    NgbModule.forRoot(),
+ 
 
     TranslateModule.forChild({
       loader: {
@@ -77,7 +77,7 @@ export function createTranslateLoader(http: HttpClient) {
     CustomFormsModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    NgbModule.forRoot().ngModule,
+
     TranslateModule
   ],
 

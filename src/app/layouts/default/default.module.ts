@@ -64,8 +64,6 @@ import { DataTableModule } from 'angular5-data-table';
     AddstockComponent,
     PhoneComponent,
 
-    
-
   ],
   imports: [
     CommonModule,
