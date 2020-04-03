@@ -1,0 +1,88 @@
+{
+    "MyOrdersLink": "My Orders",
+    "ManageOrdersLink": "Admin Orders", 
+    "ManageProductsLink": "Admin Products",
+    "LoginLink": "Login",
+    "LogOutLink": "Log Out",
+    "Sel_lang": "Chose Language",
+    "Languages":{
+        "English":"English",
+        "French":"French", 
+        "Chinese":"Chinese",
+        "Hindi":"हिंदी"
+    },
+    "Footer":{
+        "Divinector": "About out the Shop",
+        "Place": "A new place for shopping for girls, we have morden purse, all imported lingeries, fancy nighty, cosmatics, imitation jewellery, jeans, top, kurti",
+        "Owner": "Shop Owner",
+        "OwnerName": "Ghanshyam Sahu",
+        "OwnerNumber": "9424658428",
+        "OwnerEmail": "shyam.sap01@gmail.com", 
+        "OwnerAddress":"Hanuman Colony, Opposite of Rajshree A.B road guna",
+        
+        "Develop": "Develop By",
+        "DevelopName": "Abhay Sahu",
+        "DevelopNumber": "9617625945",
+        "DevelopEmail": "sahua545@gmail.com",
+        "DevelopAddress":"subhash colony A.B road guna",
+
+        "Photo": "Photo Gallary"
+    },
+
+    "Shopping": {
+        "ShoppingCart" : "Shopping Cart",
+        "Detailes1": "You have ",
+        "Detailes2": "items in your shopping cart.",
+        "ClearButton": "Clear Shopping Cart",
+        "Product": "Product",
+        "Quantity": "Quantity",
+        "Price": "Price",
+        "Cart": "in Cart",
+        "CheckOut": "Check Out",
+        "Order": "Order Detailes",
+        "Total": "Total Price", 
+        "Manual": "Manual Product",
+        "DesProduct": "Size of Product"
+
+    },
+
+    "Shipping": {
+        "Shopping": "Shopping",
+        "Name": "Name",
+        "PlaceName": "Full Name",
+        "NameRequired": "Name is required",
+        "Address": "Address",
+        "PlaceAddress": "Complete Address",
+        "AddressRequired": "Address is required",
+        "Pnumber": "Phone Number",
+        "PlacePnumber": "Valid Phone NUmber (9617625945)",
+        "PnumberRequired": "Number is required",
+        "City": "City And Pincode",
+        "PlaceCity": "City, Pincode (Guna, 473001)",
+        "CityRequired": "City is required", 
+        "AboutSize": "Comment",
+        "PlaceAboutSize": "Some Comment",
+        "AboutSizeRequired": "Description of size is required",
+        "Place": "Place Order",
+        "OrderSummary": "Order Summary",
+        "Order1": "You have ",
+        "Order2": "items in your shopping cart.",
+        "Totle": "Total"
+    },
+
+    "Product": {
+        "Category": "Categories",
+        "All-Categories": "All Categories",
+        "Search": "Search Product",
+        "Add-Product": "New Product",
+        "Admin-Search": "Search Item",
+        "title": "Title",
+        "price": "Price",
+        "Edit": "Edit"
+    },
+
+    "someOther": {
+        "add_to_cart": "Add to cart"
+    }
+     
+  }
