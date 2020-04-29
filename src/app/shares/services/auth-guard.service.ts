@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class AuthGuardService implements CanActivate {
   path: import("@angular/router").ActivatedRouteSnapshot[];
   route: import("@angular/router").ActivatedRouteSnapshot;

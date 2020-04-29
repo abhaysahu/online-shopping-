@@ -20,3 +20,4 @@ export class AdminAuthGuardService implements CanActivate{
       .map(appUser => appUser.isAdmin);
   }
 }
+ 

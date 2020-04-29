@@ -104,7 +104,7 @@ export class ShoppingCartService {
 
   private create(){
     return this.db.list('/shopping-carts').push({
-      dataCreated: new Date().getTime()
+      dataCreated: new Date().getTime() 
     });
   }
 
