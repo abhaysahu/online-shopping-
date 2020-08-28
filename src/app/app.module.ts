@@ -26,6 +26,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CustomFormsModule } from 'ng2-validation';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { MatIconModule } from '@angular/material';
 
 
  
@@ -63,6 +64,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     FormsModule,
     CustomFormsModule,
+    MatIconModule,
 
 
     //DefaultModule,
@@ -122,7 +124,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
 
   providers: [
-    { provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
+    //{ provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler}
 
   ],
  

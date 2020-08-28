@@ -26,7 +26,7 @@ import { PieComponent } from '../widget/pie/pie.component';
   ],
   imports: [
     CommonModule,
-    MatDividerModule,
+    MatDividerModule, 
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

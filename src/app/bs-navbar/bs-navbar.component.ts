@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { AuthService } from '../shares/services/auth.service';
 import { AppUser } from '../shares/models/app-user';
 import { ShoppingCartService } from '../shares/services/shopping-cart.service';
@@ -17,6 +17,9 @@ import { AngularFireDatabase } from 'angularfire2/database';
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent implements OnInit {
+
+  @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter()
+
 
 public name: "abhay shau"
 
@@ -41,10 +44,6 @@ show = true;
     ) {   
 
       this.language = this.cookie.get("language")
-
-      
-
-
 
 
       translate.addLangs(["en", "hi"]);
@@ -84,6 +83,18 @@ show = true;
   changeLanguage(lang){
     this.cookie.set("language", lang);
     this.translate.use(lang); 
+}
+
+toggleSideBar(){
+  console.log("yes")
+  this.toggleSideBarForMe.emit();
+
+  setTimeout(() => {
+    window.dispatchEvent(
+      new Event('resize')
+    );
+  }, 300);
+
 }
 
 
